@@ -244,6 +244,7 @@ _Pvt_Extensions
 paket-files/
 paket.lock
 paket.bootstrapper.exe
+.targets
 
 # FAKE - F# Make
 .fake/
