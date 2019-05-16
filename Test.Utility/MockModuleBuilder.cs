@@ -18,6 +18,14 @@ namespace Messerli.Test.Utility
             return this;
         }
 
+        public MockModuleBuilder RegisterMockFor<TInterface>(Mock<TInterface> mock) where TInterface : class
+        {
+            _mockRegistrations.Add(
+                builder => builder.Register(context => mock.Object).As<TInterface>());
+
+            return this;
+        }
+
         public MockModuleBuilder MockEnvironmentVariable(string variable, string value)
         {
             Environment.SetEnvironmentVariable(variable, value);
