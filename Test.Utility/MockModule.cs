@@ -7,12 +7,12 @@ namespace Messerli.Test.Utility
     {
         public delegate void Register(ContainerBuilder builder);
 
+        private readonly List<Register> _mockRegistrations;
+
         public MockModule(List<Register> mockRegistrations)
         {
             _mockRegistrations = mockRegistrations;
         }
-
-        private readonly List<Register> _mockRegistrations;
 
         protected override void Load(ContainerBuilder builder)
         {
