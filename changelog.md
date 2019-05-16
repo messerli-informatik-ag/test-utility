@@ -3,7 +3,7 @@
 ## 0.1.0
 - Initial release
 
-## Unreleased
+## 0.2.0
 - Added `MockModule`
 - Added `MockModuleBuilder`
 - Deleted `ModuleBuilder`
