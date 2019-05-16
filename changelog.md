@@ -4,6 +4,6 @@
 - Initial release
 
 ## Unreleased
-- Added MockModule
-- Added MockModuleBuilder
-- Deleted ModuleBuilder
+- Added `MockModule`
+- Added `MockModuleBuilder`
+- Deleted `ModuleBuilder`
