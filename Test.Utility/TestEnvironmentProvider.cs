@@ -9,7 +9,7 @@ namespace Messerli.Test.Utility
     public class TestEnvironmentProvider : IDisposable
     {
         private const string ResourceDirectoryName = "Resources";
-        private const string DirectoryPrefix = "messerli.test";
+        private const string DirectoryPrefix = "test-environment";
 
         private readonly IReadOnlyCollection<TestFile> _testFiles;
         private readonly TempDirectory.TempDirectory _tempDirectory;
