@@ -7,3 +7,6 @@
 - Added `MockModule`
 - Added `MockModuleBuilder`
 - Deleted `ModuleBuilder`
+
+## 0.3.0
+- Prefix test environment directories
