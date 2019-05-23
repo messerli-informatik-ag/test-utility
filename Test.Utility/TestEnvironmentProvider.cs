@@ -19,7 +19,7 @@ namespace Messerli.Test.Utility
         public TestEnvironmentProvider(IReadOnlyCollection<TestFile> testFiles)
         {
             _testFiles = testFiles;
-            _tempDirectory = new TempDirectoryBuilder().Prefix(DirectoryPrefix).Create();
+            _tempDirectory = CreateTempDirectory();
             RootDirectory = _tempDirectory.FullName;
             
             try
@@ -36,7 +36,7 @@ namespace Messerli.Test.Utility
         public TestEnvironmentProvider()
         {
             _testFiles = new TestFile[0];
-            _tempDirectory = new TempDirectoryBuilder().Prefix(DirectoryPrefix).Create();
+            _tempDirectory = CreateTempDirectory();
             RootDirectory = _tempDirectory.FullName;
         }
 
@@ -51,6 +51,10 @@ namespace Messerli.Test.Utility
             _tempDirectory.Dispose();
         }
         
+        private static TempDirectory.TempDirectory CreateTempDirectory()
+        {
+            return new TempDirectoryBuilder().Prefix(DirectoryPrefix).Create();
+        }
 
         private void CopyResources()
         {
