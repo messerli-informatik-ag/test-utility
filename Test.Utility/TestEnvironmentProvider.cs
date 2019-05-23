@@ -2,26 +2,28 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Messerli.TempDirectory;
 
 namespace Messerli.Test.Utility
 {
     public class TestEnvironmentProvider : IDisposable
     {
         private const string ResourceDirectoryName = "Resources";
+        private const string DirectoryPrefix = "test-environment";
 
         private readonly IReadOnlyCollection<TestFile> _testFiles;
+        private readonly TempDirectory.TempDirectory _tempDirectory;
 
-        public string RootDirectory { get; }
+        public string RootDirectory => _tempDirectory.FullName;
 
         public TestEnvironmentProvider(IReadOnlyCollection<TestFile> testFiles)
         {
             _testFiles = testFiles;
-
+            _tempDirectory = CreateTempDirectory();
+            
             try
             {
-                RootDirectory = GenerateParent();
-
-                GenerateChildren();
+                CopyResources();
             }
             catch (Exception)
             {
@@ -33,41 +35,30 @@ namespace Messerli.Test.Utility
         public TestEnvironmentProvider()
         {
             _testFiles = new TestFile[0];
-
-            try
-            {
-                RootDirectory = GenerateParent();
-            }
-            catch (Exception)
-            {
-                Dispose();
-                throw;
-            }
+            _tempDirectory = CreateTempDirectory();
         }
 
         public void Dispose()
+        {
+            RemoveTempResourceLocks();
+            _tempDirectory.Dispose();
+        }
+
+        private void RemoveTempResourceLocks()
         {
             foreach (var testFile in _testFiles)
             {
                 var destinationPath = GetDestinationPath(testFile);
                 File.SetAttributes(destinationPath, FileAttributes.Normal);
             }
-
-            Directory.Delete(RootDirectory, true);
         }
-
-        private static string GenerateParent()
+ 
+        private static TempDirectory.TempDirectory CreateTempDirectory()
         {
-            var tempPath = Path.GetTempPath();
-            var randomDirectory = Guid.NewGuid().ToString();
-            var path = Path.Combine(tempPath, randomDirectory);
-
-            Directory.CreateDirectory(path);
-
-            return path;
+            return new TempDirectoryBuilder().Prefix(DirectoryPrefix).Create();
         }
 
-        private void GenerateChildren()
+        private void CopyResources()
         {
             if (HasSubDirectories())
             {
@@ -83,7 +74,7 @@ namespace Messerli.Test.Utility
             }
         }
 
-        private string GetSourcePath(TestFile testFile)
+        private static string GetSourcePath(TestFile testFile)
         {
             return Path.Combine(ResourceDirectoryName, testFile.SourceFilePath);
         }
