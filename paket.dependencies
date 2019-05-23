@@ -4,3 +4,4 @@ source https://www.nuget.org/api/v2
 
 nuget Autofac ~> 4.8
 nuget Moq ~> 4.10
+nuget Messerli.TempDirectory ~> 0.2

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Messerli.TempDirectory;
 
 namespace Messerli.Test.Utility
 {
