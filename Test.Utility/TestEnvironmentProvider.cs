@@ -24,7 +24,7 @@ namespace Messerli.Test.Utility
             
             try
             {
-                GenerateChildren();
+                CopyResources();
             }
             catch (Exception)
             {
@@ -52,7 +52,7 @@ namespace Messerli.Test.Utility
         }
         
 
-        private void GenerateChildren()
+        private void CopyResources()
         {
             if (HasSubDirectories())
             {
