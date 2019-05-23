@@ -42,13 +42,17 @@ namespace Messerli.Test.Utility
 
         public void Dispose()
         {
+            RemoveTempResourceLocks();
+            _tempDirectory.Dispose();
+        }
+
+        private void RemoveTempResourceLocks()
+        {
             foreach (var testFile in _testFiles)
             {
                 var destinationPath = GetDestinationPath(testFile);
                 File.SetAttributes(destinationPath, FileAttributes.Normal);
             }
-
-            _tempDirectory.Dispose();
         }
  
         private static TempDirectory.TempDirectory CreateTempDirectory()
