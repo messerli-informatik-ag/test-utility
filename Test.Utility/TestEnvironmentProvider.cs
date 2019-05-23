@@ -50,7 +50,7 @@ namespace Messerli.Test.Utility
 
             _tempDirectory.Dispose();
         }
-        
+ 
         private static TempDirectory.TempDirectory CreateTempDirectory()
         {
             return new TempDirectoryBuilder().Prefix(DirectoryPrefix).Create();
