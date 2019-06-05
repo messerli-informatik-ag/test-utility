@@ -49,7 +49,10 @@ namespace Messerli.Test.Utility
             foreach (var testFile in _testFiles)
             {
                 var destinationPath = GetDestinationPath(testFile);
-                File.SetAttributes(destinationPath, FileAttributes.Normal);
+                if (File.Exists(destinationPath))
+                {
+                    File.SetAttributes(destinationPath, FileAttributes.Normal);
+                }
             }
         }
  
