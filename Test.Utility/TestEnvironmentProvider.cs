@@ -46,10 +46,10 @@ namespace Messerli.Test.Utility
 
         private void RemoveTempResourceLocks()
         {
-            foreach (var testFile in _testFiles)
+            var filesInTempDirectory = Directory.EnumerateFiles(_tempDirectory.FullName, "*", SearchOption.AllDirectories);
+            foreach (var file in filesInTempDirectory)
             {
-                var destinationPath = GetDestinationPath(testFile);
-                File.SetAttributes(destinationPath, FileAttributes.Normal);
+                File.SetAttributes(file, FileAttributes.Normal);
             }
         }
  

@@ -164,6 +164,37 @@ namespace Messerli.Test.Utility.Test
             }
         }
 
+        [Fact]
+        public void IgnoresAlreadyDeletedFiles()
+        {
+            var testFiles = new[]
+            {
+                new TestFile("file1.txt"),
+            };
+
+            using (var generateFileStructure = new TestEnvironmentProvider(testFiles))
+            {
+                var path = Path.Combine(generateFileStructure.RootDirectory, testFiles[0].RelativeFilePath);
+                File.Delete(path);
+            }
+        }
+        
+        [Fact]
+        public void RemovesManuallyCreatedReadonlyFiles()
+        {
+            using (var generateFileStructure = new TestEnvironmentProvider())
+            {
+                var tempPath = Path.GetTempPath();
+                var path = Path.Combine(tempPath, generateFileStructure.RootDirectory, "ManuallyCreatedFile.txt");
+
+                using (var _ = File.Create(path))
+                {
+                }
+                
+                File.SetAttributes(path, FileAttributes.ReadOnly);
+            }
+        }
+
         private static void IsSame(string sourcePath, string destinationPath)
         {
             var testFile = File.ReadAllText(sourcePath);
