@@ -178,6 +178,22 @@ namespace Messerli.Test.Utility.Test
                 File.Delete(path);
             }
         }
+        
+        [Fact]
+        public void RemovesManuallyCreatedReadonlyFiles()
+        {
+            using (var generateFileStructure = new TestEnvironmentProvider())
+            {
+                var tempPath = Path.GetTempPath();
+                var path = Path.Combine(tempPath, generateFileStructure.RootDirectory, "ManuallyCreatedFile.txt");
+
+                using (var _ = File.Create(path))
+                {
+                }
+                
+                File.SetAttributes(path, FileAttributes.ReadOnly);
+            }
+        }
 
         private static void IsSame(string sourcePath, string destinationPath)
         {
