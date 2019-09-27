@@ -1,6 +1,6 @@
 dist: bionic
 language: csharp
-dotnet: 3.0.100
+dotnet: "2.2"
 mono: none
 
 env:
