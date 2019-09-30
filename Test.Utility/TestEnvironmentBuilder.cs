@@ -1,21 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using Castle.Core;
-using Messerli.Test.Utility;
+﻿using System.Collections.Immutable;
+
 
 namespace Messerli.Test.Utility
 {
     public class TestEnvironmentBuilder
     {
-        private readonly List<TestFile> _testFiles = new List<TestFile>();
+        private readonly ImmutableList<TestFile> _testFiles = ImmutableList.Create<TestFile>();
+
+        public TestEnvironmentBuilder()
+        {
+        }
+
+        private TestEnvironmentBuilder(ImmutableList<TestFile> testFiles) => _testFiles = testFiles;
 
         public TestEnvironmentBuilder AddTestFile(TestFile file)
         {
-            _testFiles.Add(file);
-            return this;
+            return new TestEnvironmentBuilder(_testFiles.Add(file));
         }
 
         public TestEnvironmentProvider Build()
