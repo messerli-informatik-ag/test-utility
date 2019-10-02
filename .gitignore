@@ -243,8 +243,7 @@ _Pvt_Extensions
 # Paket dependency manager
 paket-files/
 paket.lock
-paket.bootstrapper.exe
-*.targets
+Paket.Restore.targets
 
 # FAKE - F# Make
 .fake/
