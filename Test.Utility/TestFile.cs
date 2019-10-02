@@ -1,4 +1,6 @@
-﻿namespace Messerli.Test.Utility
+﻿using System;
+
+namespace Messerli.Test.Utility
 {
     public class TestFile
     {
@@ -6,16 +8,20 @@
 
         public string RelativeFilePath { get; }
 
-        public TestFile(string filePath)
-        {
-            SourceFilePath = filePath;
-            RelativeFilePath = filePath;
-        }
-
         public TestFile(string sourceFilePath, string relativeFilePath)
         {
             SourceFilePath = sourceFilePath;
             RelativeFilePath = relativeFilePath;
+        }
+
+        public static TestFile Create(string filePath)
+        {
+            return new TestFile(filePath, filePath);
+        }
+
+        public static TestFile Create(Type type, string relativeFilePath)
+        {
+            return new TestFile(type.Assembly.CodeBase, relativeFilePath);
         }
     }
 }
