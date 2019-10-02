@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace Messerli.Test.Utility
 {
@@ -19,9 +20,9 @@ namespace Messerli.Test.Utility
             return new TestFile(filePath, filePath);
         }
 
-        public static TestFile Create(Type type, string relativeFilePath)
+        public static TestFile Create(Assembly assembly, string relativeFilePath)
         {
-            return new TestFile(type.Assembly.CodeBase, relativeFilePath);
+            return new TestFile(assembly.CodeBase, relativeFilePath);
         }
     }
 }
