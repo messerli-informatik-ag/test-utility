@@ -11,7 +11,8 @@ namespace Messerli.Test.Utility
         {
         }
 
-        private TestEnvironmentBuilder(ImmutableList<TestFile> testFiles) => _testFiles = testFiles;
+        private TestEnvironmentBuilder(ImmutableList<TestFile> testFiles) =>
+            _testFiles = testFiles;
 
         public TestEnvironmentBuilder AddTestFile(TestFile file)
         {
