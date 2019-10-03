@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Net;
 using Xunit;
 
@@ -10,7 +11,8 @@ namespace Messerli.Test.Utility.Test
         public void Create()
         {
             var testFile = TestFile.Create(typeof(TestFileTest).Assembly, "");
-            Assert.True(File.Exists(testFile.SourceFilePath));
+            var uri = new UriBuilder(testFile.SourceFilePath);
+            Assert.True(File.Exists(uri.Path));
         }
     }
 }
