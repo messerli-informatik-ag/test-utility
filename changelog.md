@@ -14,3 +14,8 @@
 ## 0.4.0
 - The `TestEnvironmentProvider` no longer fails during `Dispose` when files are removed manually.
 - Readonly files created manually (after the `TestEnvironmentProvider`) has been created are also deleted properly.
+
+## 0.5.0
+- The constructor `TestFile(string filePath)` has been removed. Use `TestFile.Create(string filePath)` instead.
+- `TestFile`s can be created from an `Assembly` using `TestFile.Create(...)`.
+- Added `TestEnvironmentBuilder`.
