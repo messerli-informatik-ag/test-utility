@@ -24,7 +24,7 @@ namespace Messerli.Test.Utility.Test
         {
             var testFiles = new[]
             {
-                new TestFile("file1.txt")
+                TestFile.Create("file1.txt")
             };
 
             using (var generateFileStructure = new TestEnvironmentProvider(testFiles))
@@ -41,9 +41,9 @@ namespace Messerli.Test.Utility.Test
         {
             var testFiles = new[]
             {
-                new TestFile("file1.txt"),
-                new TestFile("file2.txt"),
-                new TestFile("file3.txt")
+                TestFile.Create("file1.txt"),
+                TestFile.Create("file2.txt"),
+                TestFile.Create("file3.txt")
             };
 
             using (var generateFileStructure = new TestEnvironmentProvider(testFiles))
@@ -63,9 +63,9 @@ namespace Messerli.Test.Utility.Test
         {
             var testFiles = new[]
             {
-                new TestFile("file1.txt"),
-                new TestFile("file2.txt"),
-                new TestFile("file3.txt")
+                TestFile.Create("file1.txt"),
+                TestFile.Create("file2.txt"),
+                TestFile.Create("file3.txt")
             };
 
             string path;
@@ -84,9 +84,9 @@ namespace Messerli.Test.Utility.Test
         {
             var testFiles = new[]
             {
-                new TestFile("file1.txt"),
-                new TestFile("file2.txt"),
-                new TestFile("file3.txt")
+                TestFile.Create("file1.txt"),
+                TestFile.Create("file2.txt"),
+                TestFile.Create("file3.txt")
             };
 
             using (var generateFileStructure = new TestEnvironmentProvider(testFiles))
@@ -152,7 +152,7 @@ namespace Messerli.Test.Utility.Test
         {
             var testFiles = new[]
             {
-                new TestFile("file1.txt")
+                TestFile.Create("file1.txt")
             };
 
             using (var generateFileStructure = new TestEnvironmentProvider(testFiles))
@@ -169,7 +169,7 @@ namespace Messerli.Test.Utility.Test
         {
             var testFiles = new[]
             {
-                new TestFile("file1.txt"),
+                TestFile.Create("file1.txt"),
             };
 
             using (var generateFileStructure = new TestEnvironmentProvider(testFiles))
