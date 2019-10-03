@@ -11,8 +11,7 @@ namespace Messerli.Test.Utility.Test
         public void Create()
         {
             var testFile = TestFile.Create(typeof(TestFileTest).Assembly, "");
-            var uri = new UriBuilder(testFile.SourceFilePath);
-            Assert.True(File.Exists(uri.Path));
+            Assert.True(File.Exists(testFile.SourceFilePath));
         }
     }
 }

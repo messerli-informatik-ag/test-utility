@@ -22,7 +22,8 @@ namespace Messerli.Test.Utility
 
         public static TestFile Create(Assembly assembly, string relativeFilePath)
         {
-            return new TestFile(assembly.CodeBase, relativeFilePath);
+            var uri = new UriBuilder(assembly.CodeBase);
+            return new TestFile(uri.Path, relativeFilePath);
         }
     }
 }
