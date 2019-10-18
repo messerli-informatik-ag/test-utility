@@ -21,4 +21,5 @@
 - Added `TestEnvironmentBuilder`.
 
 ## Unreleased
-- Enhance mock module builder
+- Allow `MockModuleBuilder` to register anything `ContainerBuilder` can.
+- Add shortcuts to `ContainerBuilder` functionality e.g. `RegisterModule` and `RegisterInstance`.
