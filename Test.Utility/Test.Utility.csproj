@@ -1,10 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <Version>0.5.0</Version>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Messerli.Test.Utility</RootNamespace>
-    <AssemblyName>Messerli.Test.Utility</AssemblyName>
-  </PropertyGroup>
-  <Import Project="..\.paket\Paket.Restore.targets" />
+    <PropertyGroup>
+        <RootNamespace>Messerli.Test.Utility</RootNamespace>
+        <AssemblyName>Messerli.Test.Utility</AssemblyName>
+    </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PackageId>Messerli.Test.Utility</PackageId>
+        <Version>0.5.1</Version>
+        <Description>Class library to simplify test-setups.</Description>
+        <Authors>Jan Nils Ferner, Dominic Groth, Thomas Bruderer</Authors>
+        <RepositoryUrl>http://github.com/messerli-informatik-ag/uri-builder</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT OR Apache-2.0</PackageLicenseExpression>
+        <Copyright>© Messerli Informatik AG. All rights reserved.</Copyright>
+        <PackageTags>test utility</PackageTags>
+    </PropertyGroup>
+    <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
