@@ -19,3 +19,6 @@
 - The constructor `TestFile(string filePath)` has been removed. Use `TestFile.Create(string filePath)` instead.
 - `TestFile`s can be created from an `Assembly` using `TestFile.Create(...)`.
 - Added `TestEnvironmentBuilder`.
+
+## Unreleased
+- Enhance mock module builder
