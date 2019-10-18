@@ -10,19 +10,29 @@ namespace Messerli.Test.Utility
     {
         private readonly List<MockModule.Register> _mockRegistrations = new List<MockModule.Register>();
 
-        public MockModuleBuilder RegisterMockFor<TInterface>() where TInterface : class
+        public MockModuleBuilder RegisterMockFor<TInterface>()
+            where TInterface : class
+            => Register(builder => builder.Register(context => new Mock<TInterface>().Object).As<TInterface>());
+
+        public MockModuleBuilder RegisterMockFor<TInterface>(Mock<TInterface> mock)
+            where TInterface : class
+            => Register(builder => builder.Register(context => mock.Object).As<TInterface>());
+
+        public MockModuleBuilder RegisterModule<TModule>()
+            where TModule : IModule, new()
+            => Register(builder => builder.RegisterModule<TModule>());
+
+        public MockModuleBuilder RegisterModule<TModule>(TModule module)
+            where TModule : IModule, new()
+            => Register(builder => builder.RegisterModule(module));
+
+        public MockModuleBuilder RegisterInstance<TInstance>(TInstance instance)
+            where TInstance : class
+            => Register(builder => builder.RegisterInstance(instance));
+
+        public MockModuleBuilder Register(MockModule.Register registrationFunction)
         {
-            _mockRegistrations.Add(
-                builder => builder.Register(context => new Mock<TInterface>().Object).As<TInterface>());
-
-            return this;
-        }
-
-        public MockModuleBuilder RegisterMockFor<TInterface>(Mock<TInterface> mock) where TInterface : class
-        {
-            _mockRegistrations.Add(
-                builder => builder.Register(context => mock.Object).As<TInterface>());
-
+            _mockRegistrations.Add(registrationFunction);
             return this;
         }
 
