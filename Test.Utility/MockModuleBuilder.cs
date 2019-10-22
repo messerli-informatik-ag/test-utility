@@ -23,7 +23,7 @@ namespace Messerli.Test.Utility
             => Register(builder => builder.RegisterModule<TModule>());
 
         public MockModuleBuilder RegisterModule<TModule>(TModule module)
-            where TModule : IModule, new()
+            where TModule : IModule
             => Register(builder => builder.RegisterModule(module));
 
         public MockModuleBuilder RegisterInstance<TInstance>(TInstance instance)

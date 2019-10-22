@@ -23,3 +23,6 @@
 ## 0.5.1
 - Allow `MockModuleBuilder` to register anything `ContainerBuilder` can.
 - Add shortcuts to `ContainerBuilder` functionality e.g. `RegisterModule` and `RegisterInstance`.
+
+## Unreleased
+- Fix `RegisterModule(Mock<T> mock)` by removing `new()` restriction
