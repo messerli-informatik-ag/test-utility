@@ -12,7 +12,7 @@
         <Version>0.5.2</Version>
         <Description>Class library to simplify test-setups.</Description>
         <Authors>Jan Nils Ferner, Dominic Groth, Thomas Bruderer</Authors>
-        <RepositoryUrl>http://github.com/messerli-informatik-ag/uri-builder</RepositoryUrl>
+        <RepositoryUrl>http://github.com/messerli-informatik-ag//test-utility</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageLicenseExpression>MIT OR Apache-2.0</PackageLicenseExpression>
         <Copyright>© Messerli Informatik AG. All rights reserved.</Copyright>
