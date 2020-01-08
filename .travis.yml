@@ -8,8 +8,10 @@ env:
     - PATH="$PATH:$HOME/.dotnet/tools"
 
 install:
-  - dotnet restore
+  - dotnet tool restore
 
-script:
+script: 
+ - paket install
+ - dotnet restore
  - dotnet build
  - dotnet test
