@@ -11,7 +11,5 @@ install:
   - dotnet restore
 
 script:
- - paket install
- - dotnet restore
  - dotnet build
  - dotnet test
