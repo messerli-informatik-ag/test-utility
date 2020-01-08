@@ -5,7 +5,7 @@
         <AssemblyName>Messerli.Test.Utility</AssemblyName>
     </PropertyGroup>
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFramework>netstandard2.1</TargetFramework>
     </PropertyGroup>
     <PropertyGroup>
         <PackageId>Messerli.Test.Utility</PackageId>
