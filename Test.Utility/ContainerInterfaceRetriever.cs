@@ -19,7 +19,10 @@ namespace Messerli.Test.Utility
         private static IEnumerable<Type> GetAssemblyTypes(Assembly assembly)
             => assembly
                 .GetTypes()
-                .Where(type => type.IsInterface && !NamespaceContains(type, nameof(Autofac)));
+                .Where(type => type.IsInterface && !type.IsGenericType && !BelongsToAutofacNamespace(type));
+
+        private static bool BelongsToAutofacNamespace(Type type)
+            => NamespaceContains(type, nameof(Autofac));
 
         private static bool NamespaceContains(Type type, string @string)
             => type.Namespace?.Contains(@string) ?? false;
