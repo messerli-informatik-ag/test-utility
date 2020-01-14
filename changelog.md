@@ -26,3 +26,7 @@
 
 ## 0.5.2
 - Fix `RegisterModule(Mock<T> mock)` by removing `new()` restriction
+
+## Unreleased
+- Added `MockContainerBuilder`.
+- Deleted `MockModule`
