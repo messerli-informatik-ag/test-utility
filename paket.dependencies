@@ -6,3 +6,4 @@ nuget Autofac ~> 4.8
 nuget Moq ~> 4.10
 nuget Messerli.TempDirectory ~> 0.2
 nuget System.Collections.Immutable ~> 1.3
+nuget Messerli.CompositionRoot ~> 0.1.1
