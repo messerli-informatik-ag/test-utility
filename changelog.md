@@ -29,6 +29,5 @@
 
 ## Unreleased
 - Using `Messerli.CompositionRoot` nuget package
-- Converted `MockModuleBuilders` mock functionality to `ModuleBuilderMockExtension`
-- Added `ContainerBuilderMockExtension`
+- Converted `MockModuleBuilders` mock functionality to `ModuleBuilderMockExtension` and `ContainerBuilderMockExtension`
 - Deleted `MockModule` and `MockModuleBuilder` because the functionality is in `Messerli.CompositionRoot` nuget package
