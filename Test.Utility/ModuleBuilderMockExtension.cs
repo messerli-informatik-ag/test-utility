@@ -3,7 +3,7 @@ using Moq;
 
 namespace Messerli.Test.Utility
 {
-    public static class MockModuleBuilder
+    public static class ModuleBuilderMockExtension
     {
         public static void RegisterMock<T>(this ModuleBuilder moduleBuilder)
             where T : class

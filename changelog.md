@@ -28,5 +28,6 @@
 - Fix `RegisterModule(Mock<T> mock)` by removing `new()` restriction
 
 ## Unreleased
-- Added `MockContainerBuilder`.
+- Added `ModuleBuilderMockExtension`.
+- Renamed `MockContainerBuilder` to `ContainerBuilderMockExtension`.
 - Deleted `MockModule`
