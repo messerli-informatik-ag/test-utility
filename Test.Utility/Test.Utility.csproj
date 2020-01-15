@@ -9,7 +9,7 @@
     </PropertyGroup>
     <PropertyGroup>
         <PackageId>Messerli.Test.Utility</PackageId>
-        <Version>0.5.2</Version>
+        <Version>0.5.3</Version>
         <Description>Class library to simplify test-setups.</Description>
         <Authors>Jan Nils Ferner, Dominic Groth, Thomas Bruderer</Authors>
         <RepositoryUrl>http://github.com/messerli-informatik-ag//test-utility</RepositoryUrl>

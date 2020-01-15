@@ -27,7 +27,7 @@
 ## 0.5.2
 - Fix `RegisterModule(Mock<T> mock)` by removing `new()` restriction
 
-## Unreleased
+## 0.5.3
 - Using `Messerli.CompositionRoot` nuget package
 - Converted `MockModuleBuilders` mock functionality to `ModuleBuilderMockExtension` and `ContainerBuilderMockExtension`
 - Deleted `MockModule` and `MockModuleBuilder` because the functionality is in `Messerli.CompositionRoot` nuget package
