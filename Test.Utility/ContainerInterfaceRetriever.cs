@@ -19,10 +19,15 @@ namespace Messerli.Test.Utility
         private static IEnumerable<Type> GetAssemblyTypes(Assembly assembly)
             => assembly
                 .GetTypes()
-                .Where(type => type.IsInterface && !type.IsGenericType && !BelongsToAutofacNamespace(type));
+                .Where(IsValidType);
 
-        private static bool BelongsToAutofacNamespace(Type type)
-            => NamespaceContains(type, nameof(Autofac));
+        private static bool IsValidType(Type type)
+            => type.IsInterface &&
+               !type.IsGenericType &&
+               !type.BelongsToNamespaces(new[] { nameof(Autofac), nameof(System) });
+
+        private static bool BelongsToNamespaces(this Type type, IEnumerable<string> namespaces)
+            => namespaces.Any(namespaceName =>  NamespaceContains(type, namespaceName));
 
         private static bool NamespaceContains(Type type, string @string)
             => type.Namespace?.Contains(@string) ?? false;
