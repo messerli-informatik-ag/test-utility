@@ -33,7 +33,7 @@
 - Deleted `MockModule` and `MockModuleBuilder` because the functionality is in `Messerli.CompositionRoot` nuget package
 
 ## 0.5.4
-- Changed the return type of `ModuleBuilderMockExtension` and `ContainerBuilderMockExtension`
+- Changed the return type of `ModuleBuilderMockExtension` and `ContainerBuilderMockExtension`.
 
 ## unreleased
-- Add `System` to namespace filter
+- Add `System`, `Foundation` and `Internal` to excluded namespace list.
