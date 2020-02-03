@@ -8,7 +8,7 @@ namespace Messerli.Test.Utility
 {
     public static class ContainerInterfaceRetriever
     {
-        private static readonly IEnumerable<string> ExcludedTypes =
+        private static readonly IEnumerable<string> ExcludedNamespaces =
             new[] { nameof(Autofac), nameof(System) };
         
         public static IEnumerable<Type> GetAssemblyInterfaces(IContainer container)
@@ -27,7 +27,7 @@ namespace Messerli.Test.Utility
         private static bool IsValidType(Type type)
             => type.IsInterface &&
                !type.IsGenericType &&
-               !type.BelongsToAnyNamespace(ExcludedTypes);
+               !type.BelongsToAnyNamespace(ExcludedNamespaces);
 
         private static bool BelongsToAnyNamespace(this Type type, IEnumerable<string> namespaces)
             => namespaces.Any(namespaceName =>  NamespaceContains(type, namespaceName));
