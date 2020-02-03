@@ -9,7 +9,7 @@ namespace Messerli.Test.Utility
     public static class ContainerInterfaceRetriever
     {
         private static readonly IEnumerable<string> ExcludedNamespaces =
-            new[] { nameof(Autofac), nameof(System) };
+            new[] { nameof(System), "Foundation", "Internal", nameof(Autofac) };
         
         public static IEnumerable<Type> GetAssemblyInterfaces(IContainer container)
             => container
