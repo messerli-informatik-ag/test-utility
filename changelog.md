@@ -34,3 +34,6 @@
 
 ## 0.5.4
 - Changed the return type of `ModuleBuilderMockExtension` and `ContainerBuilderMockExtension`
+
+## unreleased
+- Add `System` to namespace filter
