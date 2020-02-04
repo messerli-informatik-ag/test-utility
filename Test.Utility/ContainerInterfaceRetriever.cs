@@ -8,9 +8,9 @@ namespace Messerli.Test.Utility
 {
     public static class ContainerInterfaceRetriever
     {
-        private static readonly IEnumerable<string> ExcludedNamespaces =
-            new[] { nameof(System), "Foundation", "Internal", nameof(Autofac) };
-        
+        private static readonly IEnumerable<string> ExcludedRootNamespaces =
+            new[] { nameof(System), "Windows", "Internal", nameof(Autofac) };
+
         public static IEnumerable<Type> GetAssemblyInterfaces(IContainer container)
             => container
                 .ComponentRegistry
@@ -27,12 +27,16 @@ namespace Messerli.Test.Utility
         private static bool IsValidType(Type type)
             => type.IsInterface &&
                !type.IsGenericType &&
-               !type.BelongsToAnyNamespace(ExcludedNamespaces);
+               !type.BelongsToAnyNamespace(ExcludedRootNamespaces);
 
         private static bool BelongsToAnyNamespace(this Type type, IEnumerable<string> namespaces)
-            => namespaces.Any(namespaceName =>  NamespaceContains(type, namespaceName));
+            => namespaces.Any(namespaceName =>  NamespaceIsChildOf(type, namespaceName));
 
-        private static bool NamespaceContains(Type type, string @string)
-            => type.Namespace?.Contains(@string) ?? false;
+        private static bool NamespaceIsChildOf(Type type, string @string)
+            => GetNamespaceRoot(type) == @string;
+
+        private static string GetNamespaceRoot(Type type)
+            => type.Namespace?.Split('.').FirstOrDefault()
+               ?? throw new InvalidOperationException("No namespace information present");
     }
 }
