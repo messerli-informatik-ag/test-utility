@@ -17,7 +17,7 @@ namespace Messerli.Test.Utility.Test
             var container = new CompositionRootBuilder()
                 .RegisterModule(module)
                 .Build();
-            
+
             Assert.Equal(expected, ContainerInterfaceRetriever.GetAssemblyInterfaces(container).ToArray());
         }
 
