@@ -1,7 +1,7 @@
 # Changelog
 
 ## 0.1.0
-- Initial release
+Initial release
 
 ## 0.2.0
 - Added `MockModule`
@@ -36,4 +36,5 @@
 - Changed the return type of `ModuleBuilderMockExtension` and `ContainerBuilderMockExtension`.
 
 ## unreleased
-- Add `System`, `Foundation` and `Internal` to excluded namespace list.
+- Add `System`, `Windows` and `Internal` to excluded namespace list.
+- Improve detection of ignored namespaces
