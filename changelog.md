@@ -35,6 +35,6 @@ Initial release
 ## 0.5.4
 - Changed the return type of `ModuleBuilderMockExtension` and `ContainerBuilderMockExtension`.
 
-## unreleased
+## 0.5.5
 - Add `System`, `Windows` and `Internal` to excluded namespace list.
 - Improve detection of ignored namespaces.
