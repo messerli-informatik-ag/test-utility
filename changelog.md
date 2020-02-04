@@ -9,7 +9,7 @@ Initial release
 - Deleted `ModuleBuilder`
 
 ## 0.3.0
-- Prefix test environment directories
+- Prefix test environment directories.
 
 ## 0.4.0
 - The `TestEnvironmentProvider` no longer fails during `Dispose` when files are removed manually.
@@ -25,16 +25,16 @@ Initial release
 - Add shortcuts to `ContainerBuilder` functionality e.g. `RegisterModule` and `RegisterInstance`.
 
 ## 0.5.2
-- Fix `RegisterModule(Mock<T> mock)` by removing `new()` restriction
+- Fix `RegisterModule(Mock<T> mock)` by removing `new()` restriction.
 
 ## 0.5.3
 - Using `Messerli.CompositionRoot` nuget package
 - Converted `MockModuleBuilders` mock functionality to `ModuleBuilderMockExtension` and `ContainerBuilderMockExtension`
-- Deleted `MockModule` and `MockModuleBuilder` because the functionality is in `Messerli.CompositionRoot` nuget package
+- Deleted `MockModule` and `MockModuleBuilder` because the functionality is in `Messerli.CompositionRoot` nuget package.
 
 ## 0.5.4
 - Changed the return type of `ModuleBuilderMockExtension` and `ContainerBuilderMockExtension`.
 
 ## unreleased
 - Add `System`, `Windows` and `Internal` to excluded namespace list.
-- Improve detection of ignored namespaces
+- Improve detection of ignored namespaces.
