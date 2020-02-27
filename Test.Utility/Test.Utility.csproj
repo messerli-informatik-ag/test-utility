@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <RootNamespace>Messerli.Test.Utility</RootNamespace>
@@ -6,6 +6,7 @@
     </PropertyGroup>
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
     <PropertyGroup>
         <PackageId>Messerli.Test.Utility</PackageId>

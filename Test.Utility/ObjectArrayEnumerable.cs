@@ -4,12 +4,13 @@ using System.Linq;
 
 namespace Messerli.Test.Utility
 {
-    public class ObjectArrayEnumerable<T> : IEnumerable<object[]> where T : IEnumerable<object>, new()
+    public sealed class ObjectArrayEnumerable<T> : IEnumerable<object[]>
+        where T : IEnumerable<object>, new()
     {
         public IEnumerator<object[]> GetEnumerator()
         {
             return new T()
-                .Select(@interface => new [] {@interface})
+                .Select(@interface => new[] { @interface })
                 .GetEnumerator();
         }
 

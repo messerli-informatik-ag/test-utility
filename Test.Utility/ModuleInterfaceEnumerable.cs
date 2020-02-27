@@ -6,7 +6,8 @@ using Autofac.Core;
 
 namespace Messerli.Test.Utility
 {
-    public class ModuleInterfaceEnumerable<T> : IEnumerable<Type> where T : IModule
+    public sealed class ModuleInterfaceEnumerable<T> : IEnumerable<Type>
+        where T : IModule
     {
         public IEnumerator<Type> GetEnumerator()
         {

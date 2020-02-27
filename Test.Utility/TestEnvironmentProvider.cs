@@ -6,7 +6,7 @@ using Messerli.TempDirectory;
 
 namespace Messerli.Test.Utility
 {
-    public class TestEnvironmentProvider : IDisposable
+    public sealed class TestEnvironmentProvider : IDisposable
     {
         private const string ResourceDirectoryName = "Resources";
         private const string DirectoryPrefix = "test-environment";
@@ -14,13 +14,11 @@ namespace Messerli.Test.Utility
         private readonly IReadOnlyCollection<TestFile> _testFiles;
         private readonly TempDirectory.TempDirectory _tempDirectory;
 
-        public string RootDirectory => _tempDirectory.FullName;
-
         public TestEnvironmentProvider(IReadOnlyCollection<TestFile> testFiles)
         {
             _testFiles = testFiles;
             _tempDirectory = CreateTempDirectory();
-            
+
             try
             {
                 CopyResources();
@@ -38,6 +36,8 @@ namespace Messerli.Test.Utility
             _tempDirectory = CreateTempDirectory();
         }
 
+        public string RootDirectory => _tempDirectory.FullName;
+
         public void Dispose()
         {
             RemoveTempResourceLocks();
@@ -52,7 +52,7 @@ namespace Messerli.Test.Utility
                 File.SetAttributes(file, FileAttributes.Normal);
             }
         }
- 
+
         private static TempDirectory.TempDirectory CreateTempDirectory()
         {
             return new TempDirectoryBuilder().Prefix(DirectoryPrefix).Create();
