@@ -9,7 +9,7 @@ namespace Messerli.Test.Utility.Test
         public void CreateTestEnvironmentBuilder()
         {
             var testFile = TestFile.Create("file1.txt");
-            var testEnvironmentProvider = new TestEnvironmentBuilder()
+            using var testEnvironmentProvider = new TestEnvironmentBuilder()
                 .AddTestFile(testFile)
                 .Build();
 

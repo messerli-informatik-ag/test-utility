@@ -54,7 +54,6 @@ namespace Messerli.Test.Utility.Test
                 {
                     Assert.True(File.Exists(Path.Combine(tempPath, generateFileStructure.RootDirectory, file.RelativeFilePath)));
                 }
-
             }
         }
 
@@ -189,9 +188,7 @@ namespace Messerli.Test.Utility.Test
                 var tempPath = Path.GetTempPath();
                 var path = Path.Combine(tempPath, generateFileStructure.RootDirectory, "ManuallyCreatedFile.txt");
 
-                using (var _ = File.Create(path))
-                {
-                }
+                File.Create(path).Dispose();
 
                 File.SetAttributes(path, FileAttributes.ReadOnly);
             }
