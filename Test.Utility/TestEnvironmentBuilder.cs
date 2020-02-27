@@ -1,6 +1,5 @@
 ﻿using System.Collections.Immutable;
 
-
 namespace Messerli.Test.Utility
 {
     public sealed class TestEnvironmentBuilder

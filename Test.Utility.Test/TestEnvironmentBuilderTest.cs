@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Messerli.Test.Utility.Test
 {
-    public sealed class TestEnvironmentBuilderTest 
+    public sealed class TestEnvironmentBuilderTest
     {
         [Fact]
         public void CreateTestEnvironmentBuilder()
@@ -12,13 +12,11 @@ namespace Messerli.Test.Utility.Test
             var testEnvironmentProvider = new TestEnvironmentBuilder()
                 .AddTestFile(testFile)
                 .Build();
-            
 
             var tempPath = Path.GetTempPath();
             var path = Path.Combine(tempPath, testEnvironmentProvider.RootDirectory, testFile.RelativeFilePath);
 
             Assert.True(File.Exists(path));
-
         }
     }
 }

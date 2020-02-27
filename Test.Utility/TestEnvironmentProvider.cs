@@ -20,7 +20,7 @@ namespace Messerli.Test.Utility
         {
             _testFiles = testFiles;
             _tempDirectory = CreateTempDirectory();
-            
+
             try
             {
                 CopyResources();
@@ -52,7 +52,7 @@ namespace Messerli.Test.Utility
                 File.SetAttributes(file, FileAttributes.Normal);
             }
         }
- 
+
         private static TempDirectory.TempDirectory CreateTempDirectory()
         {
             return new TempDirectoryBuilder().Prefix(DirectoryPrefix).Create();

@@ -24,7 +24,7 @@ namespace Messerli.Test.Utility.Test
         {
             var testFiles = new[]
             {
-                TestFile.Create("file1.txt")
+                TestFile.Create("file1.txt"),
             };
 
             using (var generateFileStructure = new TestEnvironmentProvider(testFiles))
@@ -43,7 +43,7 @@ namespace Messerli.Test.Utility.Test
             {
                 TestFile.Create("file1.txt"),
                 TestFile.Create("file2.txt"),
-                TestFile.Create("file3.txt")
+                TestFile.Create("file3.txt"),
             };
 
             using (var generateFileStructure = new TestEnvironmentProvider(testFiles))
@@ -65,7 +65,7 @@ namespace Messerli.Test.Utility.Test
             {
                 TestFile.Create("file1.txt"),
                 TestFile.Create("file2.txt"),
-                TestFile.Create("file3.txt")
+                TestFile.Create("file3.txt"),
             };
 
             string path;
@@ -86,7 +86,7 @@ namespace Messerli.Test.Utility.Test
             {
                 TestFile.Create("file1.txt"),
                 TestFile.Create("file2.txt"),
-                TestFile.Create("file3.txt")
+                TestFile.Create("file3.txt"),
             };
 
             using (var generateFileStructure = new TestEnvironmentProvider(testFiles))
@@ -105,7 +105,7 @@ namespace Messerli.Test.Utility.Test
             {
                 new TestFile("file1.txt", "Foo1/file1.txt"),
                 new TestFile("file2.txt", "Foo2/file2.txt"),
-                new TestFile("file3.txt", "Foo3/SubFoo3/file3.txt")
+                new TestFile("file3.txt", "Foo3/SubFoo3/file3.txt"),
             };
 
             using (var generateFileStructure = new TestEnvironmentProvider(testFiles))
@@ -122,7 +122,7 @@ namespace Messerli.Test.Utility.Test
         {
             var testFiles = new[]
             {
-                new TestFile("file5.txt", "file1.txt")
+                new TestFile("file5.txt", "file1.txt"),
             };
 
             Assert.Throws<FileNotFoundException>(() => new TestEnvironmentProvider(testFiles));
@@ -133,7 +133,7 @@ namespace Messerli.Test.Utility.Test
         {
             var testFiles = new[]
             {
-                new TestFile("SubFolder4/file4.txt", "file1.txt")
+                new TestFile("SubFolder4/file4.txt", "file1.txt"),
             };
 
             using (var generateFileStructure = new TestEnvironmentProvider(testFiles))
@@ -152,7 +152,7 @@ namespace Messerli.Test.Utility.Test
         {
             var testFiles = new[]
             {
-                TestFile.Create("file1.txt")
+                TestFile.Create("file1.txt"),
             };
 
             using (var generateFileStructure = new TestEnvironmentProvider(testFiles))
@@ -178,7 +178,7 @@ namespace Messerli.Test.Utility.Test
                 File.Delete(path);
             }
         }
-        
+
         [Fact]
         public void RemovesManuallyCreatedReadonlyFiles()
         {
@@ -190,7 +190,7 @@ namespace Messerli.Test.Utility.Test
                 using (var _ = File.Create(path))
                 {
                 }
-                
+
                 File.SetAttributes(path, FileAttributes.ReadOnly);
             }
         }
@@ -202,6 +202,5 @@ namespace Messerli.Test.Utility.Test
 
             Assert.Equal(testFile, createdFile);
         }
-
     }
 }

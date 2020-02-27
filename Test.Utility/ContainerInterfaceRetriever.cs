@@ -30,7 +30,7 @@ namespace Messerli.Test.Utility
                !type.BelongsToAnyNamespace(ExcludedRootNamespaces);
 
         private static bool BelongsToAnyNamespace(this Type type, IEnumerable<string> namespaces)
-            => namespaces.Any(namespaceName =>  NamespaceIsChildOf(type, namespaceName));
+            => namespaces.Any(namespaceName => NamespaceIsChildOf(type, namespaceName));
 
         private static bool NamespaceIsChildOf(Type type, string @string)
             => GetNamespaceRoot(type) == @string;
