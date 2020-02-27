@@ -14,7 +14,7 @@ namespace Messerli.Test.Utility.Test
         [MemberData(nameof(GetTestModules))]
         public void ReturnsExpectedInterfaces(IEnumerable<Type> expected, IModule module)
         {
-            var container = new CompositionRootBuilder()
+            using var container = new CompositionRootBuilder()
                 .RegisterModule(module)
                 .Build();
 

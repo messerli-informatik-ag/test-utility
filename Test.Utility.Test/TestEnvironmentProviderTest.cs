@@ -125,7 +125,9 @@ namespace Messerli.Test.Utility.Test
                 new TestFile("file5.txt", "file1.txt"),
             };
 
+#pragma warning disable IDISP005 // Return type should indicate that the value should be disposed.
             Assert.Throws<FileNotFoundException>(() => new TestEnvironmentProvider(testFiles));
+#pragma warning restore IDISP005 // Return type should indicate that the value should be disposed.
         }
 
         [Fact]
