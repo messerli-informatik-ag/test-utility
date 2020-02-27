@@ -14,8 +14,6 @@ namespace Messerli.Test.Utility
         private readonly IReadOnlyCollection<TestFile> _testFiles;
         private readonly TempDirectory.TempDirectory _tempDirectory;
 
-        public string RootDirectory => _tempDirectory.FullName;
-
         public TestEnvironmentProvider(IReadOnlyCollection<TestFile> testFiles)
         {
             _testFiles = testFiles;
@@ -37,6 +35,8 @@ namespace Messerli.Test.Utility
             _testFiles = new TestFile[0];
             _tempDirectory = CreateTempDirectory();
         }
+
+        public string RootDirectory => _tempDirectory.FullName;
 
         public void Dispose()
         {

@@ -10,7 +10,7 @@ namespace Messerli.Test.Utility.Test
         [Fact]
         public void Create()
         {
-            var testFile = TestFile.Create(typeof(TestFileTest).Assembly, "");
+            var testFile = TestFile.Create(typeof(TestFileTest).Assembly, string.Empty);
             Assert.True(File.Exists(testFile.SourceFilePath));
         }
     }
