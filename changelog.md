@@ -43,3 +43,6 @@ Initial release
 - Update Autofac to 5.1.
 - Add support for .NET Standard 2.0.
 - Seal all classes.
+
+## 0.6.1
+Rerelease of 0.6.0 with fixed nuget package.
