@@ -38,3 +38,8 @@ Initial release
 ## 0.5.5
 - Add `System`, `Windows` and `Internal` to excluded namespace list.
 - Improve detection of ignored namespaces.
+
+## 0.6.0
+- Update Autofac to 5.1.
+- Add support for .NET Standard 2.0.
+- Seal all classes.
