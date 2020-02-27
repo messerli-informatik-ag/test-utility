@@ -16,16 +16,7 @@
         <ProjectReference Include="..\Test.Utility\Test.Utility.csproj" />
     </ItemGroup>
     <ItemGroup>
-        <None Update="Resources\file1.txt">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
-        <None Update="Resources\file2.txt">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
-        <None Update="Resources\file3.txt">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
-        <None Update="Resources\SubFolder4\file4.txt">
+        <None Update="Resources\**\*">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
     </ItemGroup>
