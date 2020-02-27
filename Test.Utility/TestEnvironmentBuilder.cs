@@ -3,7 +3,7 @@
 
 namespace Messerli.Test.Utility
 {
-    public class TestEnvironmentBuilder
+    public sealed class TestEnvironmentBuilder
     {
         private readonly ImmutableList<TestFile> _testFiles = ImmutableList.Create<TestFile>();
 

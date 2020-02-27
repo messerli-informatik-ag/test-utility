@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Messerli.Test.Utility.Test
 {
-    public class TestEnvironmentBuilderTest 
+    public sealed class TestEnvironmentBuilderTest 
     {
         [Fact]
         public void CreateTestEnvironmentBuilder()

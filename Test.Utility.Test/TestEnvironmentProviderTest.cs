@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Messerli.Test.Utility.Test
 {
-    public class TestEnvironmentProviderTest
+    public sealed class TestEnvironmentProviderTest
     {
         private const string ResourcesFolder = "Resources";
 

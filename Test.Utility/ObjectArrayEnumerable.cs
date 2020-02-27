@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Messerli.Test.Utility
 {
-    public class ObjectArrayEnumerable<T> : IEnumerable<object[]> where T : IEnumerable<object>, new()
+    public sealed class ObjectArrayEnumerable<T> : IEnumerable<object[]> where T : IEnumerable<object>, new()
     {
         public IEnumerator<object[]> GetEnumerator()
         {

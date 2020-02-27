@@ -6,7 +6,7 @@ using Messerli.TempDirectory;
 
 namespace Messerli.Test.Utility
 {
-    public class TestEnvironmentProvider : IDisposable
+    public sealed class TestEnvironmentProvider : IDisposable
     {
         private const string ResourceDirectoryName = "Resources";
         private const string DirectoryPrefix = "test-environment";

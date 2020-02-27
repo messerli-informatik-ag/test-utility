@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Autofac.Core;
@@ -8,7 +8,7 @@ using Xunit;
 
 namespace Messerli.Test.Utility.Test
 {
-    public class ContainerInterfaceRetrieverTest
+    public sealed class ContainerInterfaceRetrieverTest
     {
         [Theory]
         [MemberData(nameof(GetTestModules))]

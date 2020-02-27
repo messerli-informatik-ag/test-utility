@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Messerli.Test.Utility.Test
 {
-    public class TestFileTest
+    public sealed class TestFileTest
     {
         [Fact]
         public void Create()

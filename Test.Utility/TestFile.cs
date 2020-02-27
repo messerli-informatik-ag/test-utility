@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace Messerli.Test.Utility
 {
-    public class TestFile
+    public sealed class TestFile
     {
         public string SourceFilePath { get; }
 
