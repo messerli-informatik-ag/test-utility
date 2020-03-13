@@ -8,11 +8,6 @@
         <AssemblyName>Messerli.Test.Utility.Test</AssemblyName>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" />
-        <PackageReference Include="xunit" />
-        <PackageReference Include="xunit.runner.visualstudio" />
-    </ItemGroup>
-    <ItemGroup>
         <ProjectReference Include="..\Test.Utility\Test.Utility.csproj" />
     </ItemGroup>
     <ItemGroup>
@@ -21,6 +16,9 @@
         </None>
     </ItemGroup>
     <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" />
+        <PackageReference Include="xunit" />
+        <PackageReference Include="xunit.runner.visualstudio" />
         <PackageReference Include="Autofac" />
         <PackageReference Include="Moq" />
         <PackageReference Include="Messerli.CompositionRoot" />
