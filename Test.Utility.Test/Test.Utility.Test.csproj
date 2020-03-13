@@ -20,5 +20,9 @@
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
     </ItemGroup>
-    <Import Project="..\.paket\Paket.Restore.targets" />
+    <ItemGroup>
+        <PackageReference Include="Autofac" />
+        <PackageReference Include="Moq" />
+        <PackageReference Include="Messerli.CompositionRoot" />
+    </ItemGroup>
 </Project>
