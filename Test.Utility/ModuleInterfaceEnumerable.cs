@@ -6,6 +6,7 @@ using Autofac.Core;
 
 namespace Messerli.Test.Utility
 {
+    [Obsolete("Use the [TypesThatNeedToBeImplementedInAssemblyData] attribute instead")]
     public sealed class ModuleInterfaceEnumerable<T> : IEnumerable<Type>
         where T : IModule
     {

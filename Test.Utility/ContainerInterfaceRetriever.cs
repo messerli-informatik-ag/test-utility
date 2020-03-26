@@ -6,6 +6,7 @@ using Autofac;
 
 namespace Messerli.Test.Utility
 {
+    [Obsolete("Use the [TypesThatNeedToBeImplementedInAssemblyData] attribute instead")]
     public static class ContainerInterfaceRetriever
     {
         private static readonly IEnumerable<string> ExcludedRootNamespaces =
