@@ -10,7 +10,7 @@ namespace Messerli.Test.Utility
     ///     Provides all types that need to be implemented in an assembly as theory data.
     /// </para>
     /// <para>
-    ///     The following types need to be implemented:
+    ///     The following types need to be implemented (excluding generic types):
     ///     <list type="bullet">
     ///         <item><description>delegates</description></item>
     ///         <item><description>abstract classes</description></item>

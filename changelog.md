@@ -52,3 +52,6 @@ Rerelease of 0.6.0 with fixed nuget package.
   that need to implemented in an assembly to an xUnit theory.
 - Remove `ModuleInterfaceEnumerable`, `ObjectArrayEnumerable`, and `ContainerInterfaceRetriever`.
   They are superseded by `TypesThatNeedToBeImplementedInAssemblyData`.
+
+## 0.7.1
+- Fix regression where static classes and generic types where treated as types that need to be implemented.
