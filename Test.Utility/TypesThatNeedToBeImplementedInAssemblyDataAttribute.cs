@@ -18,6 +18,25 @@ namespace Messerli.Test.Utility
     ///     </list>
     /// </para>
     /// </summary>
+    /// <example>
+    /// <code>
+    /// using System;
+    /// using Autofac;
+    /// using Messerli.CompositionRoot;
+    /// using Xunit;
+    ///
+    /// public sealed class FooModuleTest : IDisposable
+    /// {
+    ///     private readonly IContainer _container = new CompositionRootBuilder().Build();
+    ///
+    ///     [Theory]
+    ///     [TypesThatNeedToBeImplementedInAssemblyData("AssemblyToSearch")]
+    ///     public void AbstractTypesCanBeResolved(Type type) => _container.Resolve(type);
+    ///
+    ///     public void Dispose() => _container.Dispose();
+    /// }
+    /// </code>
+    /// </example>
     public class TypesThatNeedToBeImplementedInAssemblyDataAttribute : DataAttribute
     {
         private readonly string _assemblyName;
