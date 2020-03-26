@@ -9,6 +9,8 @@
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="..\Test.Utility\Test.Utility.csproj" />
+        <ProjectReference Include="..\TestAssemblies\TestAssembly\TestAssembly.csproj" />
+        <ProjectReference Include="..\TestAssemblies\EmptyAssembly\EmptyAssembly.csproj" />
     </ItemGroup>
     <ItemGroup>
         <None Update="Resources\**\*">

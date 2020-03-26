@@ -10,7 +10,7 @@
     </PropertyGroup>
     <PropertyGroup>
         <PackageId>Messerli.Test.Utility</PackageId>
-        <Version>0.6.1</Version>
+        <Version>0.7.0</Version>
         <Description>Class library to simplify test-setups.</Description>
         <RepositoryUrl>https://github.com/messerli-informatik-ag/test-utility</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
@@ -19,6 +19,7 @@
         <PackageTags>test utility</PackageTags>
     </PropertyGroup>
     <ItemGroup>
+        <PackageReference Include="xunit.extensibility.core" />
         <PackageReference Include="Autofac" />
         <PackageReference Include="Moq" />
         <PackageReference Include="Messerli.TempDirectory" />
