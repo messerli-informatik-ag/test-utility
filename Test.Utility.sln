@@ -24,6 +24,12 @@ ProjectSection(SolutionItems) = preProject
 	Packages.props = Packages.props
 EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAssembly", "TestAssemblies\TestAssembly\TestAssembly.csproj", "{075D5BBD-7DF7-415F-B100-7C1D3327C0DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmptyAssembly", "TestAssemblies\EmptyAssembly\EmptyAssembly.csproj", "{B63EB312-56A5-4F0E-AF2C-2E3DD4E1D285}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestAssemblies", "TestAssemblies", "{1AAEF232-939D-4C91-97C2-53C766CD53DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,11 +44,23 @@ Global
 		{B64871DE-EF8E-4319-8785-3AD389C6AFBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B64871DE-EF8E-4319-8785-3AD389C6AFBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B64871DE-EF8E-4319-8785-3AD389C6AFBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{075D5BBD-7DF7-415F-B100-7C1D3327C0DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{075D5BBD-7DF7-415F-B100-7C1D3327C0DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{075D5BBD-7DF7-415F-B100-7C1D3327C0DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{075D5BBD-7DF7-415F-B100-7C1D3327C0DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B63EB312-56A5-4F0E-AF2C-2E3DD4E1D285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B63EB312-56A5-4F0E-AF2C-2E3DD4E1D285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B63EB312-56A5-4F0E-AF2C-2E3DD4E1D285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B63EB312-56A5-4F0E-AF2C-2E3DD4E1D285}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CC4BE93E-EABA-4665-87E9-38DA45046C05}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B63EB312-56A5-4F0E-AF2C-2E3DD4E1D285} = {1AAEF232-939D-4C91-97C2-53C766CD53DD}
+		{075D5BBD-7DF7-415F-B100-7C1D3327C0DA} = {1AAEF232-939D-4C91-97C2-53C766CD53DD}
 	EndGlobalSection
 EndGlobal
