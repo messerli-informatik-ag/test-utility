@@ -19,7 +19,7 @@
         <PackageTags>test utility</PackageTags>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="xunit.core" />
+        <PackageReference Include="xunit.extensibility.core" />
         <PackageReference Include="Autofac" />
         <PackageReference Include="Moq" />
         <PackageReference Include="Messerli.TempDirectory" />
