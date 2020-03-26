@@ -13,7 +13,7 @@ namespace Messerli.Test.Utility.Test
 
         private const string EmptyAssemblyName = "EmptyAssembly";
 
-        private static readonly Type[] ImplementableTypesInTestAssembly =
+        private static readonly Type[] TypesThatNeedToBeImplementedInAssembly =
         {
             typeof(ImplementationFactory),
             typeof(AbstractClassWithMethod),
@@ -32,11 +32,11 @@ namespace Messerli.Test.Utility.Test
         }
 
         [Fact]
-        public void FindsOnlyImplementableTypes()
+        public void FindsOnlyTypesThatNeedToBeImplemented()
         {
             var types = TypesThatNeedToBeImplementedInAssemblyRetriever.GetTypesThatNeedToBeImplementedInAssembly(TestAssemblyName);
             PrintTypes(types);
-            Assert.Equal(OrderByFullName(ImplementableTypesInTestAssembly), OrderByFullName(types));
+            Assert.Equal(OrderByFullName(TypesThatNeedToBeImplementedInAssembly), OrderByFullName(types));
         }
 
         [Fact]
@@ -56,7 +56,7 @@ namespace Messerli.Test.Utility.Test
         [TypesThatNeedToBeImplementedInAssemblyData(TestAssemblyName)]
         public void AttributeSmokeTest(Type type)
         {
-            Assert.Contains(type, ImplementableTypesInTestAssembly);
+            Assert.Contains(type, TypesThatNeedToBeImplementedInAssembly);
         }
 
         private static IEnumerable<Type> OrderByFullName(IEnumerable<Type> types)
