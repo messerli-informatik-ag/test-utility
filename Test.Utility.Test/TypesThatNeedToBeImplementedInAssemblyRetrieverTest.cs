@@ -11,7 +11,7 @@ namespace Messerli.Test.Utility.Test
     {
         private const string TestAssemblyName = "TestAssembly";
 
-        private const string EmptyAssemblyName = "TestAssembly";
+        private const string EmptyAssemblyName = "EmptyAssembly";
 
         private static readonly Type[] ImplementableTypesInTestAssembly =
         {
