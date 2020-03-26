@@ -3,6 +3,7 @@
     <PropertyGroup>
         <RootNamespace>EmptyAssembly</RootNamespace>
         <AssemblyName>EmptyAssembly</AssemblyName>
+        <IsPackable>false</IsPackable>
     </PropertyGroup>
     <PropertyGroup>
         <TargetFrameworks>netstandard2.1;netstandard2.0</TargetFrameworks>
