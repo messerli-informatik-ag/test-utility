@@ -1,4 +1,6 @@
-﻿using System;
+﻿#pragma warning disable 618
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Autofac.Core;
