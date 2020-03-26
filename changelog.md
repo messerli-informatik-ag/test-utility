@@ -47,7 +47,7 @@ Initial release
 ## 0.6.1
 Rerelease of 0.6.0 with fixed nuget package.
 
-## 0.6.2
+## 0.7.0
 - Add `TypesThatNeedToBeImplementedInAssemblyData` attribute which provides a list of types
   that need to implemented in an assembly to an xUnit theory.
 - Remove `ModuleInterfaceEnumerable`, `ObjectArrayEnumerable`, and `ContainerInterfaceRetriever`.
