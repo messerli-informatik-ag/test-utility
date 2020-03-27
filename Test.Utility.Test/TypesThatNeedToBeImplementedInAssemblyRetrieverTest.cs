@@ -36,7 +36,7 @@ namespace Messerli.Test.Utility.Test
         {
             var types = TypesThatNeedToBeImplementedInAssemblyRetriever.GetTypesThatNeedToBeImplementedInAssembly(TestAssemblyName);
             PrintTypes(types);
-            Assert.Equal(OrderByFullName(TypesThatNeedToBeImplementedInAssembly), OrderByFullName(types));
+            Assert.Equal(TypesThatNeedToBeImplementedInAssembly.OrderByFullTypeName(), types.OrderByFullTypeName());
         }
 
         [Fact]
@@ -58,9 +58,6 @@ namespace Messerli.Test.Utility.Test
         {
             Assert.Contains(type, TypesThatNeedToBeImplementedInAssembly);
         }
-
-        private static IEnumerable<Type> OrderByFullName(IEnumerable<Type> types)
-            => types.OrderBy(t => t.FullName);
 
         private void PrintTypes(IEnumerable<Type> types)
         {
