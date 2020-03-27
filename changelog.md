@@ -55,3 +55,6 @@ Rerelease of 0.6.0 with fixed nuget package.
 
 ## 0.7.1
 - Fix regression where static classes and generic types where treated as types that need to be implemented.
+
+## 0.7.2
+- Add extension method `GetRegisteredTypes` on `IComponentContext` to retrieve all registered types.
