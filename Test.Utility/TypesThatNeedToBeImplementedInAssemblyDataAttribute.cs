@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Xunit.Sdk;
@@ -8,6 +9,7 @@ namespace Messerli.Test.Utility
     /// <summary>
     /// <para>
     ///     Provides all types that need to be implemented in an assembly as theory data.
+    ///     You can use <see cref="ExcludedTypesAttribute" /> to exclude types.
     /// </para>
     /// <para>
     ///     The following types need to be implemented (excluding generic types):
@@ -47,8 +49,20 @@ namespace Messerli.Test.Utility
         }
 
         public override IEnumerable<object[]> GetData(MethodInfo testMethod)
-            => TypesThatNeedToBeImplementedInAssemblyRetriever
+        {
+            var excludedTypes = CollectExcludedTypes(testMethod);
+            return TypesThatNeedToBeImplementedInAssemblyRetriever
                 .GetTypesThatNeedToBeImplementedInAssembly(_assemblyName)
+                .Where(type => !excludedTypes.Contains(type))
                 .Select(type => new object[] { type });
+        }
+
+        private static ISet<Type> CollectExcludedTypes(MethodInfo testMethod)
+        {
+            var types = testMethod
+                .GetCustomAttributes<ExcludedTypesAttribute>()
+                .SelectMany(attr => attr.Types);
+            return new HashSet<Type>(types);
+        }
     }
 }

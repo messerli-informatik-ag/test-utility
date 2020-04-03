@@ -54,6 +54,8 @@ namespace Messerli.Test.Utility.Test
 
         [Theory]
         [TypesThatNeedToBeImplementedInAssemblyData(TestAssemblyName)]
+        [ExcludedTypes(typeof(IInterfaceWithMethod), typeof(ImplementationFactory))]
+        [ExcludedTypes(typeof(AbstractClassWithProperty))]
         public void AttributeSmokeTest(Type type)
         {
             Assert.Contains(type, TypesThatNeedToBeImplementedInAssembly);
