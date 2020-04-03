@@ -58,3 +58,6 @@ Rerelease of 0.6.0 with fixed nuget package.
 
 ## 0.7.2
 - Add extension method `GetRegisteredTypes` on `IComponentContext` to retrieve all registered types.
+
+## 0.7.3
+- Allow blacklisting of types on `TypesThatNeedToBeImplementedInAssemblyData` attribute using a new attribute: `ExcludedTypes`.
