@@ -62,7 +62,7 @@ Rerelease of 0.6.0 with fixed nuget package.
 ## 0.7.3
 - Allow blacklisting of types on `TypesThatNeedToBeImplementedInAssemblyData` attribute using a new attribute: `ExcludedTypes`.
 
-## Unreleased
+## 0.8.0
 - Add `TypesRegisteredInContainerDataAttribute` attribute which provides the types
   registered in an Autofac container as xUnit theory data.
 - Seal `ExcludedTypesAttribute` and make its `Types` member internal.
