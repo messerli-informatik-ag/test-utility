@@ -8,7 +8,7 @@ namespace Messerli.Test.Utility
     {
         public static IRegistrationBuilder<T, SimpleActivatorData, SingleRegistrationStyle> RegisterMock<T>(this ContainerBuilder builder)
             where T : class
-            => builder.Register(context => new Mock<T>().Object).As<T>();
+            => builder.Register(context => Mock.Of<T>()).As<T>();
 
         public static IRegistrationBuilder<T, SimpleActivatorData, SingleRegistrationStyle> RegisterMock<T>(this ContainerBuilder builder, Mock<T> mock)
             where T : class
