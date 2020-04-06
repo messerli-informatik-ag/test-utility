@@ -61,3 +61,7 @@ Rerelease of 0.6.0 with fixed nuget package.
 
 ## 0.7.3
 - Allow blacklisting of types on `TypesThatNeedToBeImplementedInAssemblyData` attribute using a new attribute: `ExcludedTypes`.
+
+## Unreleased
+- Make sure that the exception thrown by the `TypesThatNeedToBeImplementedInAssemblyData` attribute
+  when the specified assembly can't be found is displayed in the test explorer.

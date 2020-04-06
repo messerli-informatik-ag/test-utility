@@ -7,6 +7,9 @@ namespace Messerli.Test.Utility
 {
     internal static class TypesThatNeedToBeImplementedInAssemblyRetriever
     {
+        /// <exception cref="InvalidOperationException">Thrown when the assembly is not loaded or invalid.</exception>
+        // Note to future developer: When throwing new exception types make sure that they are displayed by the test explorer.
+        // Exceptions that don't get displayed properly are: ArgumentException
         public static IEnumerable<Type> GetTypesThatNeedToBeImplementedInAssembly(string assemblyName)
             => GetAssemblyFromLoadedAssemblies(assemblyName)
                 .GetTypes()
@@ -17,7 +20,7 @@ namespace Messerli.Test.Utility
             => AppDomain.CurrentDomain
                 .GetAssemblies()
                 .SingleOrDefault(assembly => assembly.GetName().Name == assemblyName)
-                    ?? throw new ArgumentException($"Assembly '{assemblyName}' is not loaded or does not exist", nameof(assemblyName));
+                    ?? throw new InvalidOperationException($"Assembly '{assemblyName}' is not loaded or does not exist");
 
         private static bool IsImplementableType(Type type)
             => IsDelegate(type) || IsImplementableInterface(type) || IsAbstractClass(type);
