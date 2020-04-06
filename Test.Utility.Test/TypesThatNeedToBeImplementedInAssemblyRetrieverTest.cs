@@ -48,7 +48,7 @@ namespace Messerli.Test.Utility.Test
         [Fact]
         public void ThrowsWhenAssemblyIsNotFound()
         {
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<InvalidOperationException>(() =>
                 TypesThatNeedToBeImplementedInAssemblyRetriever.GetTypesThatNeedToBeImplementedInAssembly("NonExistingAssembly"));
         }
 
