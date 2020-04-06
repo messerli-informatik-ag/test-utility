@@ -53,7 +53,7 @@ namespace Messerli.Test.Utility.Test
         }
 
         [Theory]
-        [TypesThatNeedToBeImplementedInAssemblyData("Foo")]
+        [TypesThatNeedToBeImplementedInAssemblyData(TestAssemblyName)]
         [ExcludedTypes(typeof(IInterfaceWithMethod), typeof(ImplementationFactory))]
         [ExcludedTypes(typeof(AbstractClassWithProperty))]
         public void AttributeSmokeTest(Type type)
