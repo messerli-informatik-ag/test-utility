@@ -65,3 +65,5 @@ Rerelease of 0.6.0 with fixed nuget package.
 ## Unreleased
 - Add `TypesRegisteredInContainerDataAttribute` attribute which provides the types
   registered in an Autofac container as xUnit theory data.
+- Seal `ExcludedTypesAttribute` and make its `Types` member internal.
+- Seal `TypesThatNeedToBeImplementedInAssemblyDataAttribute`.

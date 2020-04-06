@@ -7,13 +7,13 @@ namespace Messerli.Test.Utility
     /// Blacklists a hardcoded list of types. Used together with <see cref="TypesThatNeedToBeImplementedInAssemblyDataAttribute"/>.
     /// </summary>
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-    public class ExcludedTypesAttribute : Attribute
+    public sealed class ExcludedTypesAttribute : Attribute
     {
         public ExcludedTypesAttribute(params Type[] types)
         {
             Types = types;
         }
 
-        public IEnumerable<Type> Types { get; }
+        internal IEnumerable<Type> Types { get; }
     }
 }
