@@ -48,12 +48,12 @@ namespace Messerli.Test.Utility.Test
         [Fact]
         public void ThrowsWhenAssemblyIsNotFound()
         {
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<InvalidOperationException>(() =>
                 TypesThatNeedToBeImplementedInAssemblyRetriever.GetTypesThatNeedToBeImplementedInAssembly("NonExistingAssembly"));
         }
 
         [Theory]
-        [TypesThatNeedToBeImplementedInAssemblyData(TestAssemblyName)]
+        [TypesThatNeedToBeImplementedInAssemblyData("Foo")]
         [ExcludedTypes(typeof(IInterfaceWithMethod), typeof(ImplementationFactory))]
         [ExcludedTypes(typeof(AbstractClassWithProperty))]
         public void AttributeSmokeTest(Type type)
