@@ -62,6 +62,10 @@ Rerelease of 0.6.0 with fixed nuget package.
 ## 0.7.3
 - Allow blacklisting of types on `TypesThatNeedToBeImplementedInAssemblyData` attribute using a new attribute: `ExcludedTypes`.
 
-## Unreleased
+## 0.8.0
 - Make sure that the exception thrown by the `TypesThatNeedToBeImplementedInAssemblyData` attribute
   when the specified assembly can't be found is displayed in the test explorer.
+- Add `TypesRegisteredInContainerDataAttribute` attribute which provides the types
+  registered in an Autofac container as xUnit theory data.
+- Seal `ExcludedTypesAttribute` and make its `Types` member internal.
+- Seal `TypesThatNeedToBeImplementedInAssemblyDataAttribute`.

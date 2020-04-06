@@ -39,7 +39,7 @@ namespace Messerli.Test.Utility
     /// }
     /// </code>
     /// </example>
-    public class TypesThatNeedToBeImplementedInAssemblyDataAttribute : DataAttribute
+    public sealed class TypesThatNeedToBeImplementedInAssemblyDataAttribute : DataAttribute
     {
         private readonly string _assemblyName;
 
