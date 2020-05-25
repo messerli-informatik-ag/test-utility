@@ -70,5 +70,5 @@ Rerelease of 0.6.0 with fixed nuget package.
 - Seal `ExcludedTypesAttribute` and make its `Types` member internal.
 - Seal `TypesThatNeedToBeImplementedInAssemblyDataAttribute`.
 
-## Unreleased
+## 0.8.1
 - `TypesRegisteredInContainerData` now ignores keyed and named registrations.
