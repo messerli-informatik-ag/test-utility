@@ -69,3 +69,6 @@ Rerelease of 0.6.0 with fixed nuget package.
   registered in an Autofac container as xUnit theory data.
 - Seal `ExcludedTypesAttribute` and make its `Types` member internal.
 - Seal `TypesThatNeedToBeImplementedInAssemblyDataAttribute`.
+
+## 0.8.1
+- `TypesRegisteredInContainerData` now ignores keyed and named registrations.

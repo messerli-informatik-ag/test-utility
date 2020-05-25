@@ -26,12 +26,30 @@ namespace Messerli.Test.Utility.Test
             Assert.Equal(expectedTypes.OrderByFullTypeName(), container.GetRegisteredTypes().OrderByFullTypeName());
         }
 
+        [Fact]
+        public void KeyedServicesAreIgnored()
+        {
+            using var container = new CompositionRootBuilder()
+                .RegisterModule<ModuleWithKeyedServices>()
+                .Build();
+            Assert.Empty(container.GetRegisteredTypes());
+        }
+
         private class FooModule : Module
         {
             protected override void Load(ContainerBuilder builder)
             {
                 builder.RegisterType<Foo>().As<IFoo>();
                 builder.RegisterInstance<CreateFoo>(() => new Foo());
+            }
+        }
+
+        private class ModuleWithKeyedServices : Module
+        {
+            protected override void Load(ContainerBuilder builder)
+            {
+                builder.RegisterType<Foo>().Named<IFoo>("foo");
+                builder.RegisterType<Foo>().Keyed<IFoo>(42);
             }
         }
 

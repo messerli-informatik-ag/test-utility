@@ -17,9 +17,12 @@ namespace Messerli.Test.Utility
         public static IEnumerable<Type> GetRegisteredTypes(this IComponentContext componentContext)
             => GetRegistrations(componentContext)
                 .SelectMany(registration => registration.Services)
+                .Where(IsTypedService)
                 .OfType<IServiceWithType>()
                 .Select(service => service.ServiceType)
                 .Where(IsTypeNotOnBlacklist);
+
+        private static bool IsTypedService(Service service) => service is TypedService;
 
         private static bool IsTypeNotOnBlacklist(Type type) => !BlacklistedTypes.Contains(type);
 
