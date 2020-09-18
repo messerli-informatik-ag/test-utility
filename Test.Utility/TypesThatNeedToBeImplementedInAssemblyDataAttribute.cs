@@ -1,8 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Xunit.Sdk;
+using static Messerli.Test.Utility.ExcludedTypesUtility;
 
 namespace Messerli.Test.Utility
 {
@@ -55,14 +55,6 @@ namespace Messerli.Test.Utility
                 .GetTypesThatNeedToBeImplementedInAssembly(_assemblyName)
                 .Where(type => !excludedTypes.Contains(type))
                 .Select(type => new object[] { type });
-        }
-
-        private static ISet<Type> CollectExcludedTypes(MethodInfo testMethod)
-        {
-            var types = testMethod
-                .GetCustomAttributes<ExcludedTypesAttribute>()
-                .SelectMany(attr => attr.Types);
-            return new HashSet<Type>(types);
         }
     }
 }
