@@ -68,7 +68,7 @@ namespace Messerli.Test.Utility
             var targetType = testMethod.DeclaringType ?? throw new NullReferenceException();
             var types = await GetTypesRegisteredInContainerViaMethod(targetType, _createContainerMethodName);
             var excludedTypes = CollectExcludedTypes(testMethod);
-            return types.Where(type => !excludedTypes.Contains(type)).Select(type => new[] { type });
+            return types.Except(excludedTypes).Select(type => new[] { type });
         }
     }
 }

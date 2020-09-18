@@ -49,12 +49,9 @@ namespace Messerli.Test.Utility
         }
 
         public override IEnumerable<object[]> GetData(MethodInfo testMethod)
-        {
-            var excludedTypes = CollectExcludedTypes(testMethod);
-            return TypesThatNeedToBeImplementedInAssemblyRetriever
+            => TypesThatNeedToBeImplementedInAssemblyRetriever
                 .GetTypesThatNeedToBeImplementedInAssembly(_assemblyName)
-                .Where(type => !excludedTypes.Contains(type))
+                .Except(CollectExcludedTypes(testMethod))
                 .Select(type => new object[] { type });
-        }
     }
 }
