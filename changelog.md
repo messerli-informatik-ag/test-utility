@@ -72,3 +72,6 @@ Rerelease of 0.6.0 with fixed nuget package.
 
 ## 0.8.1
 - `TypesRegisteredInContainerData` now ignores keyed and named registrations.
+
+## 0.8.2
+- `[TypesRegisterdInContainerData]` now respects the `[ExcludedTypes]` attribute.
