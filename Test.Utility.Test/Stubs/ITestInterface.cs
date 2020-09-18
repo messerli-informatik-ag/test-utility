@@ -1,4 +1,4 @@
-﻿namespace Messerli.Test.Utility.Test.Stubs
+namespace Messerli.Test.Utility.Test.Stubs
 {
     public interface ITestInterface
     {
