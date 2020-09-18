@@ -8,6 +8,7 @@ using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 using Autofac;
 using Xunit.Sdk;
+using static Messerli.Test.Utility.ExcludedTypesUtility;
 using static Messerli.Test.Utility.TypesRegisteredInContainerRetriever;
 
 namespace Messerli.Test.Utility
@@ -15,6 +16,7 @@ namespace Messerli.Test.Utility
     /// <summary>
     /// <para>
     ///     Provides all types registered in an Autofac <see cref="IContainer"/> as theory data.
+    ///     You can use <see cref="ExcludedTypesAttribute" /> to exclude types.
     /// </para>
     /// </summary>
     /// <example>
@@ -32,6 +34,7 @@ namespace Messerli.Test.Utility
     ///
     ///     [Theory]
     ///     [TypesRegisteredInContainerData(nameof(CreateContainer))]
+    ///     [ExcludedTypes(typeof(IFoo))]
     ///     public void TypesRegisteredInContainerCanBeResolved(Type type) => _container.Resolve(type);
     ///
     ///     public void Dispose() => _container.Dispose();
@@ -64,7 +67,8 @@ namespace Messerli.Test.Utility
         {
             var targetType = testMethod.DeclaringType ?? throw new NullReferenceException();
             var types = await GetTypesRegisteredInContainerViaMethod(targetType, _createContainerMethodName);
-            return types.Select(type => new[] { type });
+            var excludedTypes = CollectExcludedTypes(testMethod);
+            return types.Where(type => !excludedTypes.Contains(type)).Select(type => new[] { type });
         }
     }
 }

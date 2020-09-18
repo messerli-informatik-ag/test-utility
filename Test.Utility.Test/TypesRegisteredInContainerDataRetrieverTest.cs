@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
 using Messerli.CompositionRoot;
@@ -9,6 +10,12 @@ namespace Messerli.Test.Utility.Test
 {
     public class TypesRegisteredInContainerDataRetrieverTest
     {
+        private static readonly ISet<Type> TypesRegisteredInContainer = new HashSet<Type>
+        {
+            typeof(IFoo),
+            typeof(IBar),
+        };
+
         private interface IFoo
         {
         }
@@ -20,9 +27,8 @@ namespace Messerli.Test.Utility.Test
         [Fact]
         public async Task RetrievesTypesRegisteredInContainer()
         {
-            var expectedTypes = new[] { typeof(IFoo), typeof(IBar) };
             var types = await GetTypesRegisteredInContainerViaMethod(nameof(CreateContainer));
-            Assert.Equal(expectedTypes, types);
+            Assert.Equal(TypesRegisteredInContainer, types);
         }
 
         [Fact]
@@ -67,6 +73,15 @@ namespace Messerli.Test.Utility.Test
             {
                 await GetTypesRegisteredInContainerViaMethod(nameof(CreateContainerWithParameters));
             });
+        }
+
+        [Theory]
+        [TypesRegisteredInContainerData(nameof(CreateContainer))]
+        [ExcludedTypes(typeof(IFoo))]
+        public void AttributeSmokeTest(Type type)
+        {
+            var excludedTypes = new[] { typeof(IFoo) };
+            Assert.Contains(type, TypesRegisteredInContainer.Except(excludedTypes));
         }
 
         public static IContainer CreateContainer()
