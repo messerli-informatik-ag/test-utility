@@ -6,7 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7315EE08-6CAF-4806-AFDA-FD98C6E43D3E}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		.travis.yml = .travis.yml
 		changelog.md = changelog.md
 		license_apache.txt = license_apache.txt
 		license_mit.txt = license_mit.txt
