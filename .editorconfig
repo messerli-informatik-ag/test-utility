@@ -10,9 +10,6 @@ indent_style = space
 indent_size = 4
 trim_trailing_whitespace = true
 
-[*.cs]
-charset = utf-8-bom
-
 [.gitmodules]
 indent_style = tab
 

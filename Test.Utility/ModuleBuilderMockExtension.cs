@@ -1,4 +1,4 @@
-﻿using Messerli.CompositionRoot;
+using Messerli.CompositionRoot;
 using Moq;
 
 namespace Messerli.Test.Utility
