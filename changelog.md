@@ -78,3 +78,4 @@ Rerelease of 0.6.0 with fixed nuget package.
 
 ## Unreleased
 * Only depend on `System.Collections.Immutable` when targeting .NET Standard.
+* Enable nullable annotations introduced with C# 8.
