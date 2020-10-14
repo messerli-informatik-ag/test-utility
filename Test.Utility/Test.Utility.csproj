@@ -5,7 +5,7 @@
         <AssemblyName>Messerli.Test.Utility</AssemblyName>
     </PropertyGroup>
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.1;netstandard2.0</TargetFrameworks>
+        <TargetFrameworks>netcoreapp3.1;netstandard2.1;netstandard2.0</TargetFrameworks>
         <LangVersion>8.0</LangVersion>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
@@ -26,7 +26,7 @@
         <PackageReference Include="Autofac" />
         <PackageReference Include="Moq" />
         <PackageReference Include="Messerli.TempDirectory" />
-        <PackageReference Include="System.Collections.Immutable" />
+        <PackageReference Include="System.Collections.Immutable" Condition="'$(TargetFramework)' == 'netstandard2.1' Or '$(TargetFramework)' == 'netstandard2.0'" />
         <PackageReference Include="Messerli.CompositionRoot" />
     </ItemGroup>
 </Project>

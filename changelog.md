@@ -75,3 +75,6 @@ Rerelease of 0.6.0 with fixed nuget package.
 
 ## 0.8.2
 - `[TypesRegisterdInContainerData]` now respects the `[ExcludedTypes]` attribute.
+
+## Unreleased
+* Only depend on `System.Collections.Immutable` when targeting .NET Standard.
