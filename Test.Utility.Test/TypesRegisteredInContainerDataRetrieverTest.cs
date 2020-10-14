@@ -28,7 +28,7 @@ namespace Messerli.Test.Utility.Test
         public async Task RetrievesTypesRegisteredInContainer()
         {
             var types = await GetTypesRegisteredInContainerViaMethod(nameof(CreateContainer));
-            Assert.Equal(TypesRegisteredInContainer, types);
+            Assert.Equal(TypesRegisteredInContainer.OrderByFullTypeName(), types.OrderByFullTypeName());
         }
 
         [Fact]
