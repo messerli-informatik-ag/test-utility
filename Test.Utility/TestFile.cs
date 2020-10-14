@@ -22,7 +22,7 @@ namespace Messerli.Test.Utility
 
         public static TestFile Create(Assembly assembly, string relativeFilePath)
         {
-            var uri = new UriBuilder(assembly.CodeBase);
+            var uri = new UriBuilder(assembly.CodeBase ?? throw new NullReferenceException("Assembly has no CodeBase"));
             return new TestFile(uri.Path, relativeFilePath);
         }
     }

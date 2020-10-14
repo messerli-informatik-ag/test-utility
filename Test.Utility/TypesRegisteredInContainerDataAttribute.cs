@@ -58,7 +58,7 @@ namespace Messerli.Test.Utility
             }
             catch (AggregateException exception) when (exception.Flatten().InnerExceptions.Count == 1)
             {
-                ExceptionDispatchInfo.Capture(exception.Flatten().InnerException).Throw();
+                ExceptionDispatchInfo.Capture(exception.Flatten().InnerException!).Throw();
                 throw null!;
             }
         }
