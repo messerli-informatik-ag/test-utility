@@ -76,7 +76,7 @@ Rerelease of 0.6.0 with fixed nuget package.
 ## 0.8.2
 - `[TypesRegisterdInContainerData]` now respects the `[ExcludedTypes]` attribute.
 
-## Unreleased
+## 0.8.3
 * Add compatibility for Autofac 6.x.
 * Only depend on `System.Collections.Immutable` when targeting .NET Standard.
 * Enable nullable annotations introduced with C# 8.
