@@ -21,6 +21,8 @@ namespace Messerli.Test.Utility
         {
             try
             {
+                // `Assembly.Load` is required when running tests from Rider, because
+                // Rider is not as eager as `dotnet test` when it comes to assembly loading.
                 return GetAssemblyFromLoadedAssemblies(assemblyName) ?? Assembly.Load(assemblyName);
             }
             catch (Exception exception) when (exception is BadImageFormatException or IOException)
