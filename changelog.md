@@ -80,3 +80,6 @@ Rerelease of 0.6.0 with fixed nuget package.
 * Add compatibility for Autofac 6.x.
 * Only depend on `System.Collections.Immutable` when targeting .NET Standard.
 * Enable nullable annotations introduced with C# 8.
+
+## 0.8.4
+* Fix `[TypesThatNeedToBeImplementedInAssemblyData]` when tests are run in Rider.

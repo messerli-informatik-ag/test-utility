@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 
@@ -11,16 +12,29 @@ namespace Messerli.Test.Utility
         // Note to future developer: When throwing new exception types make sure that they are displayed by the test explorer.
         // Exceptions that don't get displayed properly are: ArgumentException
         public static IEnumerable<Type> GetTypesThatNeedToBeImplementedInAssembly(string assemblyName)
-            => GetAssemblyFromLoadedAssemblies(assemblyName)
+            => GetAssemblyByName(assemblyName)
                 .GetTypes()
                 .Where(IsImplementableType)
                 .Where(IsNonGenericType);
 
-        private static Assembly GetAssemblyFromLoadedAssemblies(string assemblyName)
+        private static Assembly GetAssemblyByName(string assemblyName)
+        {
+            try
+            {
+                // `Assembly.Load` is required when running tests from Rider, because
+                // Rider is not as eager as `dotnet test` when it comes to assembly loading.
+                return GetAssemblyFromLoadedAssemblies(assemblyName) ?? Assembly.Load(assemblyName);
+            }
+            catch (Exception exception) when (exception is BadImageFormatException or IOException)
+            {
+                throw new InvalidOperationException($"Unable to load assembly '{assemblyName}'", exception);
+            }
+        }
+
+        private static Assembly? GetAssemblyFromLoadedAssemblies(string assemblyName)
             => AppDomain.CurrentDomain
                 .GetAssemblies()
-                .SingleOrDefault(assembly => assembly.GetName().Name == assemblyName)
-                    ?? throw new InvalidOperationException($"Assembly '{assemblyName}' is not loaded or does not exist");
+                .SingleOrDefault(assembly => assembly.GetName().Name == assemblyName);
 
         private static bool IsImplementableType(Type type)
             => IsDelegate(type) || IsImplementableInterface(type) || IsAbstractClass(type);
