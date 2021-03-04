@@ -6,15 +6,13 @@
 
         private delegate void PrivateDelegate();
 
-        public void Test()
+        public interface INestedPublicInterface
         {
+            void Test();
         }
 
-        public class NestedPublicClass
+        public void Test()
         {
-            public void Test()
-            {
-            }
         }
     }
 }

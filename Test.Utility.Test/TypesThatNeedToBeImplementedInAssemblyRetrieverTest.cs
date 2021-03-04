@@ -35,6 +35,8 @@ namespace Messerli.Test.Utility.Test
             typeof(EmptyAbstractClass),
             typeof(IInternalInterface),
             typeof(InternalClass.InternalDelegate),
+            typeof(InternalClass.INestedPublicInterface),
+            typeof(PublicClass.INestedInternalInterface),
         };
 
         private readonly ITestOutputHelper _testOutputHelper;

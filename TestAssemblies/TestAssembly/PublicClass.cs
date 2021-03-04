@@ -2,15 +2,13 @@
 {
     public class PublicClass
     {
-        public void Test()
+        public interface INestedInternalInterface
         {
+            public void Test();
         }
 
-        public class NestedInternalClass
+        public void Test()
         {
-            public void Test()
-            {
-            }
         }
     }
 }
