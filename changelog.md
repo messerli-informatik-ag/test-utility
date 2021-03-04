@@ -84,6 +84,6 @@ Rerelease of 0.6.0 with fixed nuget package.
 ## 0.8.4
 * Fix `[TypesThatNeedToBeImplementedInAssemblyData]` when tests are run in Rider.
 
-## 0.8.4
+## 0.8.5
 * Fix `[TypesThatNeedToBeImplementedInAssemblyDataAttribute]` ignoring internals and privates.
 * Add `[TypesThatNeedToBeImplementedInAssemblyDataAttribute]` optional parameter `[IncludeInternals]`.
