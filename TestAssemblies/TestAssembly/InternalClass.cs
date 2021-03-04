@@ -9,5 +9,12 @@
         public void Test()
         {
         }
+
+        public class NestedPublicClass
+        {
+            public void Test()
+            {
+            }
+        }
     }
 }
