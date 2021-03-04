@@ -24,6 +24,19 @@ namespace Messerli.Test.Utility.Test
             typeof(EmptyAbstractClass),
         };
 
+        private static readonly Type[] TypesThatNeedToBeImplementedInAssemblyAndInternals =
+        {
+            typeof(ImplementationFactory),
+            typeof(AbstractClassWithMethod),
+            typeof(AbstractClassWithProperty),
+            typeof(IInterfaceWithMethod),
+            typeof(IInterfaceWithProperty),
+            typeof(IEmptyInterfaceInheritingMethods),
+            typeof(EmptyAbstractClass),
+            typeof(IInternalInterface),
+            typeof(InternalClass.InternalDelegate),
+        };
+
         private readonly ITestOutputHelper _testOutputHelper;
 
         public TypesThatNeedToBeImplementedInAssemblyRetrieverTest(ITestOutputHelper testOutputHelper)
@@ -34,7 +47,7 @@ namespace Messerli.Test.Utility.Test
         [Fact]
         public void FindsOnlyTypesThatNeedToBeImplemented()
         {
-            var types = TypesThatNeedToBeImplementedInAssemblyRetriever.GetTypesThatNeedToBeImplementedInAssembly(TestAssemblyName);
+            var types = TypesThatNeedToBeImplementedInAssemblyRetriever.GetTypesThatNeedToBeImplementedInAssembly(TestAssemblyName, false);
             PrintTypes(types);
             Assert.Equal(TypesThatNeedToBeImplementedInAssembly.OrderByFullTypeName(), types.OrderByFullTypeName());
         }
@@ -42,14 +55,22 @@ namespace Messerli.Test.Utility.Test
         [Fact]
         public void FindsAssemblyWhenCodeHasNoExplicitReferenceToAssembly()
         {
-            Assert.Empty(TypesThatNeedToBeImplementedInAssemblyRetriever.GetTypesThatNeedToBeImplementedInAssembly(EmptyAssemblyName));
+            Assert.Empty(TypesThatNeedToBeImplementedInAssemblyRetriever.GetTypesThatNeedToBeImplementedInAssembly(EmptyAssemblyName, false));
         }
 
         [Fact]
         public void ThrowsWhenAssemblyIsNotFound()
         {
             Assert.Throws<InvalidOperationException>(() =>
-                TypesThatNeedToBeImplementedInAssemblyRetriever.GetTypesThatNeedToBeImplementedInAssembly("NonExistingAssembly"));
+                TypesThatNeedToBeImplementedInAssemblyRetriever.GetTypesThatNeedToBeImplementedInAssembly("NonExistingAssembly", false));
+        }
+
+        [Fact]
+        public void FindsOnlyTypesThatNeedToBeImplementedAndInternalTypes()
+        {
+            var types = TypesThatNeedToBeImplementedInAssemblyRetriever.GetTypesThatNeedToBeImplementedInAssembly(TestAssemblyName, true);
+            PrintTypes(types);
+            Assert.Equal(TypesThatNeedToBeImplementedInAssemblyAndInternals.OrderByFullTypeName(), types.OrderByFullTypeName());
         }
 
         [Theory]
