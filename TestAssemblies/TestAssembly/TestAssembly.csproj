@@ -12,4 +12,7 @@
         <Nullable>enable</Nullable>
         <WarningsAsErrors>true</WarningsAsErrors>
     </PropertyGroup>
+    <ItemGroup>
+        <InternalsVisibleTo Include="Messerli.Test.Utility.Test" />
+    </ItemGroup>
 </Project>
