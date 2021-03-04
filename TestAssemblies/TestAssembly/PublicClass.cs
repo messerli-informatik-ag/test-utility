@@ -2,7 +2,7 @@
 {
     public class PublicClass
     {
-        public interface INestedInternalInterface
+        internal interface INestedInternalInterface
         {
             public void Test();
         }
