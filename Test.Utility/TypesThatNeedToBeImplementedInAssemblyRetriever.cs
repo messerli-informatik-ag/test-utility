@@ -11,11 +11,15 @@ namespace Messerli.Test.Utility
         /// <exception cref="InvalidOperationException">Thrown when the assembly is not loaded or invalid.</exception>
         // Note to future developer: When throwing new exception types make sure that they are displayed by the test explorer.
         // Exceptions that don't get displayed properly are: ArgumentException
-        public static IEnumerable<Type> GetTypesThatNeedToBeImplementedInAssembly(string assemblyName)
+        public static IEnumerable<Type> GetTypesThatNeedToBeImplementedInAssembly(string assemblyName, bool includeInternal)
             => GetAssemblyByName(assemblyName)
                 .GetTypes()
                 .Where(IsImplementableType)
-                .Where(IsNonGenericType);
+                .Where(IsNonGenericType)
+                .Where(type => type.IsPublic
+                            || type.IsNestedPublic
+                            || (includeInternal && type.IsNotPublic)
+                            || (includeInternal && type.IsNestedAssembly));
 
         private static Assembly GetAssemblyByName(string assemblyName)
         {

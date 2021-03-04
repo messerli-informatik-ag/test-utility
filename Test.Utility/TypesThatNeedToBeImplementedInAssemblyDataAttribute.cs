@@ -48,9 +48,11 @@ namespace Messerli.Test.Utility
             _assemblyName = assemblyName;
         }
 
+        public bool IncludeInternal { get; set; } = false;
+
         public override IEnumerable<object[]> GetData(MethodInfo testMethod)
             => TypesThatNeedToBeImplementedInAssemblyRetriever
-                .GetTypesThatNeedToBeImplementedInAssembly(_assemblyName)
+                .GetTypesThatNeedToBeImplementedInAssembly(_assemblyName, IncludeInternal)
                 .Except(CollectExcludedTypes(testMethod))
                 .Select(type => new object[] { type });
     }
