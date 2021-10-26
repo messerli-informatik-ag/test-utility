@@ -87,3 +87,6 @@ Rerelease of 0.6.0 with fixed nuget package.
 ## 0.8.5
 * Fix `[TypesThatNeedToBeImplementedInAssemblyDataAttribute]` ignoring internals and privates.
 * Add `[TypesThatNeedToBeImplementedInAssemblyDataAttribute]` optional parameter `[IncludeInternals]`.
+
+## 0.8.6
+* Relax version constraint for `Messerli.CompositionRoot`.
