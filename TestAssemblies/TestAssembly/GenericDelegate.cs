@@ -1,4 +1,4 @@
 namespace TestAssembly
 {
-    public delegate T Foo<T>(T bar);
+    public delegate T GenericDelegate<T>(T bar);
 }

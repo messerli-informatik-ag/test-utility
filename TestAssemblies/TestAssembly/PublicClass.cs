@@ -4,7 +4,7 @@
     {
         internal interface INestedInternalInterface
         {
-            public void Test();
+            void Test();
         }
 
         public void Test()
