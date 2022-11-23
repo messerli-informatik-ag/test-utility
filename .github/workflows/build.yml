@@ -26,3 +26,17 @@ jobs:
       run: dotnet build --no-restore /p:TreatWarningsAsErrors=true
     - name: Run Tests
       run: dotnet test --no-build
+  nupkg:
+    name: Generate NuGet Packages
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-dotnet@v3
+    - name: Generate NuGet Packages
+      run: dotnet pack --configuration Release --output nupkg /p:TreatWarningsAsErrors=true
+    - uses: actions/upload-artifact@v2
+      if: success() && github.ref == 'refs/heads/main'
+      with:
+        name: nupkg
+        path: nupkg/*
+        retention-days: 1
