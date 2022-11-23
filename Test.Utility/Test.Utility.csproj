@@ -11,10 +11,8 @@
     </PropertyGroup>
     <PropertyGroup>
         <PackageId>Messerli.Test.Utility</PackageId>
-        <Version>0.8.6</Version>
+        <Version>0.8.7</Version>
         <Description>Class library to simplify test-setups.</Description>
-        <RepositoryUrl>https://github.com/messerli-informatik-ag/test-utility</RepositoryUrl>
-        <RepositoryType>git</RepositoryType>
         <PackageLicenseExpression>MIT OR Apache-2.0</PackageLicenseExpression>
         <Copyright>© Messerli Informatik AG. All rights reserved.</Copyright>
         <PackageTags>test utility</PackageTags>
