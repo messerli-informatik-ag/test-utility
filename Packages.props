@@ -11,6 +11,7 @@
 	</ItemGroup>
 	<ItemGroup Label="Build dependencies">
 		<PackageReference Update="Messerli.CodeStyle" Version="2.1.1" />
+		<PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
 	</ItemGroup>
 	<ItemGroup Label="Test dependencies">
 		<PackageReference Update="Microsoft.NET.Test.Sdk" Version="[15.8.0, 16)" />
