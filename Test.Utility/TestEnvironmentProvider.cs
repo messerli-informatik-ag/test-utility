@@ -9,15 +9,15 @@ namespace Messerli.Test.Utility
     public sealed class TestEnvironmentProvider : IDisposable
     {
         private const string ResourceDirectoryName = "Resources";
-        private const string DirectoryPrefix = "test-environment";
+        private const string DirectoryPrefix = "test-environment-";
 
         private readonly IReadOnlyCollection<TestFile> _testFiles;
-        private readonly TempDirectory.TempDirectory _tempDirectory;
+        private readonly TempSubdirectory _tempDirectory;
 
         public TestEnvironmentProvider(IReadOnlyCollection<TestFile> testFiles)
         {
             _testFiles = testFiles;
-            _tempDirectory = CreateTempDirectory();
+            _tempDirectory = TempSubdirectory.Create(DirectoryPrefix);
 
             try
             {
@@ -33,7 +33,7 @@ namespace Messerli.Test.Utility
         public TestEnvironmentProvider()
         {
             _testFiles = new TestFile[0];
-            _tempDirectory = CreateTempDirectory();
+            _tempDirectory = TempSubdirectory.Create(DirectoryPrefix);
         }
 
         public string RootDirectory => _tempDirectory.FullName;
@@ -51,11 +51,6 @@ namespace Messerli.Test.Utility
             {
                 File.SetAttributes(file, FileAttributes.Normal);
             }
-        }
-
-        private static TempDirectory.TempDirectory CreateTempDirectory()
-        {
-            return new TempDirectoryBuilder().Prefix(DirectoryPrefix).Create();
         }
 
         private void CopyResources()

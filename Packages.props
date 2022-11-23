@@ -4,7 +4,7 @@
 		<PackageReference Update="Autofac" Version="$(AutofacVersion)" />
 		<PackageReference Update="Autofac" Version="[5.1.2, 7)" Condition="'$(AutofacVersion)' == '' Or '$(AutofacVersion)' == 'lowestSupported'" />
 		<PackageReference Update="Messerli.CompositionRoot" Version="[0.2.1, 2)" />
-		<PackageReference Update="Messerli.TempDirectory" Version="[0.2.1, 0.3)" />
+		<PackageReference Update="Messerli.TempDirectory" Version="[0.3.0, 0.4)" />
 		<PackageReference Update="Moq" Version="[4.13.1, 5)" />
 		<PackageReference Update="System.Collections.Immutable" Version="[1.7, 2)" />
 		<PackageReference Update="xunit.extensibility.core" Version="[2.3.1, 3)" />
