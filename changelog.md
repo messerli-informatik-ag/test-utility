@@ -90,3 +90,7 @@ Rerelease of 0.6.0 with fixed nuget package.
 
 ## 0.8.6
 * Relax version constraint for `Messerli.CompositionRoot`.
+
+## 0.8.7
+* Update to newest version of `Messerli.TempDirectory`.
+* Enable source link and deterministic builds.
