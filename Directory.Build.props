@@ -11,4 +11,8 @@
 	<ItemGroup Label="Deterministic Builds and Source Link">
 		<PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
 	</ItemGroup>
+	<PropertyGroup>
+		<Authors>Messerli Informatik AG</Authors>
+		<Copyright>© Messerli Informatik AG. All rights reserved.</Copyright>
+	</PropertyGroup>
 </Project>
