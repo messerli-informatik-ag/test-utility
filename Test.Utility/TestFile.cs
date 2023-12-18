@@ -22,7 +22,9 @@ namespace Messerli.Test.Utility
 
         public static TestFile Create(Assembly assembly, string relativeFilePath)
         {
+#pragma warning disable SYSLIB0012
             var uri = new UriBuilder(assembly.CodeBase ?? throw new NullReferenceException("Assembly has no CodeBase"));
+#pragma warning restore SYSLIB0012
             return new TestFile(uri.Path, relativeFilePath);
         }
     }
