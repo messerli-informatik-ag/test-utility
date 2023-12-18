@@ -94,3 +94,8 @@ Rerelease of 0.6.0 with fixed nuget package.
 ## 0.8.7
 * Update to newest version of `Messerli.TempDirectory`.
 * Enable source link and deterministic builds.
+
+## 0.9.0
+* Add `TargetFramework` `net8.0`.
+* Remove `TargetFramework` `netcoreapp3.1`.
+* Update `Autofac` to `7.1.0`.

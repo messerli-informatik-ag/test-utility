@@ -5,8 +5,8 @@
         <AssemblyName>Messerli.Test.Utility.Test</AssemblyName>
     </PropertyGroup>
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
-        <LangVersion>8.0</LangVersion>
+        <TargetFramework>net8.0</TargetFramework>
+        <LangVersion>12.0</LangVersion>
         <Nullable>enable</Nullable>
         <IsPackable>false</IsPackable>
     </PropertyGroup>
@@ -16,9 +16,7 @@
         <ProjectReference Include="..\TestAssemblies\EmptyAssembly\EmptyAssembly.csproj" />
     </ItemGroup>
     <ItemGroup>
-        <None Update="Resources\**\*">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
+        <None Update="Resources\**\*" CopyToOutputDirectory="PreserveNewest" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.NET.Test.Sdk" />

@@ -2,7 +2,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<ItemGroup Label="Runtime dependencies">
 		<PackageReference Update="Autofac" Version="$(AutofacVersion)" />
-		<PackageReference Update="Autofac" Version="[5.1.2, 7)" Condition="'$(AutofacVersion)' == '' Or '$(AutofacVersion)' == 'lowestSupported'" />
+		<PackageReference Update="Autofac" Version="[5.1.2, 8)" Condition="'$(AutofacVersion)' == '' Or '$(AutofacVersion)' == 'lowestSupported'" />
 		<PackageReference Update="Messerli.CompositionRoot" Version="[0.2.1, 2)" />
 		<PackageReference Update="Messerli.TempDirectory" Version="[0.3.0, 0.4)" />
 		<PackageReference Update="Moq" Version="[4.13.1, 5)" />

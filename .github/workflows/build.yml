@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        autofac: [ 'lowestSupported', '6.0.0' ]
+        autofac: [ 'lowestSupported', '6.0.0', '7.1.0' ]
     env:
       AutofacVersion: ${{matrix.autofac}}
     steps:
