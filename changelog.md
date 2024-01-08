@@ -99,3 +99,6 @@ Rerelease of 0.6.0 with fixed nuget package.
 * Add `TargetFramework` `net8.0`.
 * Remove `TargetFramework` `netcoreapp3.1`.
 * Update `Autofac` to `7.1.0`.
+
+# 0.9.1
+* Update `Messerli.CompositionRoot` to `1.1.2`
