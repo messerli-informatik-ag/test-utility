@@ -5,13 +5,13 @@
         <AssemblyName>Messerli.Test.Utility</AssemblyName>
     </PropertyGroup>
     <PropertyGroup>
-        <TargetFrameworks>NET8.0;netstandard2.1;netstandard2.0</TargetFrameworks>
-        <LangVersion>12.0</LangVersion>
+        <TargetFrameworks>net8.0; net9.0;netstandard2.1;netstandard2.0</TargetFrameworks>
+        <LangVersion>13.0</LangVersion>
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <PropertyGroup>
         <PackageId>Messerli.Test.Utility</PackageId>
-        <Version>0.9.1</Version>
+        <Version>0.10.0</Version>
         <Description>Class library to simplify test-setups.</Description>
         <PackageLicenseExpression>MIT OR Apache-2.0</PackageLicenseExpression>
         <PackageTags>test utility</PackageTags>

@@ -5,8 +5,8 @@
         <AssemblyName>Messerli.Test.Utility.Test</AssemblyName>
     </PropertyGroup>
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <LangVersion>12.0</LangVersion>
+        <TargetFramework>net9.0</TargetFramework>
+        <LangVersion>13.0</LangVersion>
         <Nullable>enable</Nullable>
         <IsPackable>false</IsPackable>
     </PropertyGroup>
