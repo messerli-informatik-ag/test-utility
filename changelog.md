@@ -102,3 +102,7 @@ Rerelease of 0.6.0 with fixed nuget package.
 
 # 0.9.1
 * Update `Messerli.CompositionRoot` to `1.1.2`
+
+# 0.10.0
+* Update to .Net 9.0
+* Add compatibility for Autofac 8.x.
