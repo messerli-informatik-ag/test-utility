@@ -1,31 +1,24 @@
 using System;
 using System.Reflection;
 
-namespace Messerli.Test.Utility
+namespace Messerli.Test.Utility;
+
+public sealed class TestFile(string sourceFilePath, string relativeFilePath)
 {
-    public sealed class TestFile
+    public string SourceFilePath { get; } = sourceFilePath;
+
+    public string RelativeFilePath { get; } = relativeFilePath;
+
+    public static TestFile Create(string filePath)
     {
-        public TestFile(string sourceFilePath, string relativeFilePath)
-        {
-            SourceFilePath = sourceFilePath;
-            RelativeFilePath = relativeFilePath;
-        }
+        return new TestFile(filePath, filePath);
+    }
 
-        public string SourceFilePath { get; }
-
-        public string RelativeFilePath { get; }
-
-        public static TestFile Create(string filePath)
-        {
-            return new TestFile(filePath, filePath);
-        }
-
-        public static TestFile Create(Assembly assembly, string relativeFilePath)
-        {
+    public static TestFile Create(Assembly assembly, string relativeFilePath)
+    {
 #pragma warning disable SYSLIB0012
-            var uri = new UriBuilder(assembly.CodeBase ?? throw new NullReferenceException("Assembly has no CodeBase"));
+        var uri = new UriBuilder(assembly.CodeBase ?? throw new NullReferenceException("Assembly has no CodeBase"));
 #pragma warning restore SYSLIB0012
-            return new TestFile(uri.Path, relativeFilePath);
-        }
+        return new TestFile(uri.Path, relativeFilePath);
     }
 }

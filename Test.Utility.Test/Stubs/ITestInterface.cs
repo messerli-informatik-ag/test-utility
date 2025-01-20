@@ -1,10 +1,5 @@
-namespace Messerli.Test.Utility.Test.Stubs
-{
-    public interface ITestInterface
-    {
-    }
+namespace Messerli.Test.Utility.Test.Stubs;
 
-    public interface ITestInterface2
-    {
-    }
-}
+public interface ITestInterface;
+
+public interface ITestInterface2;
