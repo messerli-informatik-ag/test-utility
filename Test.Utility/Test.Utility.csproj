@@ -11,7 +11,7 @@
     </PropertyGroup>
     <PropertyGroup>
         <PackageId>Messerli.Test.Utility</PackageId>
-        <Version>0.10.0</Version>
+        <Version>0.11.0</Version>
         <Description>Class library to simplify test-setups.</Description>
         <PackageLicenseExpression>MIT OR Apache-2.0</PackageLicenseExpression>
         <PackageTags>test utility</PackageTags>
