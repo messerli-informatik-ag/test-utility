@@ -8,12 +8,7 @@ namespace Messerli.Test.Utility;
 /// Used together with <see cref="TypesThatNeedToBeImplementedInAssemblyDataAttribute"/> and <see cref="TypesRegisteredInContainerRetriever"/>.
 /// </summary>
 [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-public sealed class ExcludedTypesAttribute : Attribute
+public sealed class ExcludedTypesAttribute(params Type[] types) : Attribute
 {
-    public ExcludedTypesAttribute(params Type[] types)
-    {
-        Types = types;
-    }
-
-    internal IEnumerable<Type> Types { get; }
+    internal IEnumerable<Type> Types { get; } = types;
 }

@@ -32,7 +32,7 @@ public sealed class TestEnvironmentProvider : IDisposable
 
     public TestEnvironmentProvider()
     {
-        _testFiles = new TestFile[0];
+        _testFiles = [];
         _tempDirectory = TempSubdirectory.Create(DirectoryPrefix);
     }
 

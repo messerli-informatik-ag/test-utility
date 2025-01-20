@@ -41,14 +41,9 @@ namespace Messerli.Test.Utility;
 /// }
 /// </code>
 /// </example>
-public sealed class TypesRegisteredInContainerDataAttribute : DataAttribute
+public sealed class TypesRegisteredInContainerDataAttribute(string createContainerMethodName) : DataAttribute
 {
-    private readonly string _createContainerMethodName;
-
-    public TypesRegisteredInContainerDataAttribute(string createContainerMethodName)
-    {
-        _createContainerMethodName = createContainerMethodName;
-    }
+    private readonly string _createContainerMethodName = createContainerMethodName;
 
     public override IEnumerable<object[]> GetData(MethodInfo testMethod)
     {

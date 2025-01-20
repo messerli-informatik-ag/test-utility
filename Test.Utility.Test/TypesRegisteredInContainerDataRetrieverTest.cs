@@ -16,13 +16,9 @@ public class TypesRegisteredInContainerDataRetrieverTest
         typeof(IBar),
     };
 
-    private interface IFoo
-    {
-    }
+    private interface IFoo;
 
-    private interface IBar
-    {
-    }
+    private interface IBar;
 
     [Fact]
     public async Task RetrievesTypesRegisteredInContainer()
@@ -122,13 +118,9 @@ public class TypesRegisteredInContainerDataRetrieverTest
         }
     }
 
-    private class Foo : IFoo
-    {
-    }
+    private class Foo : IFoo;
 
-    private class Bar : IBar
-    {
-    }
+    private class Bar : IBar;
 
     private class AsyncDisposable : IAsyncDisposable
     {

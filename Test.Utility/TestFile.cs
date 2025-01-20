@@ -3,17 +3,11 @@ using System.Reflection;
 
 namespace Messerli.Test.Utility;
 
-public sealed class TestFile
+public sealed class TestFile(string sourceFilePath, string relativeFilePath)
 {
-    public TestFile(string sourceFilePath, string relativeFilePath)
-    {
-        SourceFilePath = sourceFilePath;
-        RelativeFilePath = relativeFilePath;
-    }
+    public string SourceFilePath { get; } = sourceFilePath;
 
-    public string SourceFilePath { get; }
-
-    public string RelativeFilePath { get; }
+    public string RelativeFilePath { get; } = relativeFilePath;
 
     public static TestFile Create(string filePath)
     {

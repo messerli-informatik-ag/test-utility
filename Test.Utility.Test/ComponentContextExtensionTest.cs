@@ -8,9 +8,7 @@ public class ComponentContextExtensionTest
 {
     private delegate IFoo CreateFoo();
 
-    private interface IFoo
-    {
-    }
+    private interface IFoo;
 
     [Fact]
     public void ReturnsAllRegisteredTypes()
@@ -53,7 +51,5 @@ public class ComponentContextExtensionTest
         }
     }
 
-    private class Foo : IFoo
-    {
-    }
+    private class Foo : IFoo;
 }

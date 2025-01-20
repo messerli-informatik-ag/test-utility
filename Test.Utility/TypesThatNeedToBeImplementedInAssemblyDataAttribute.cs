@@ -39,14 +39,9 @@ namespace Messerli.Test.Utility;
 /// }
 /// </code>
 /// </example>
-public sealed class TypesThatNeedToBeImplementedInAssemblyDataAttribute : DataAttribute
+public sealed class TypesThatNeedToBeImplementedInAssemblyDataAttribute(string assemblyName) : DataAttribute
 {
-    private readonly string _assemblyName;
-
-    public TypesThatNeedToBeImplementedInAssemblyDataAttribute(string assemblyName)
-    {
-        _assemblyName = assemblyName;
-    }
+    private readonly string _assemblyName = assemblyName;
 
     public bool IncludeInternal { get; set; } = false;
 

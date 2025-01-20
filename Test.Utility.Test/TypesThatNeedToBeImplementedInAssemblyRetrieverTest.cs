@@ -6,7 +6,7 @@ using Xunit.Abstractions;
 
 namespace Messerli.Test.Utility.Test;
 
-public class TypesThatNeedToBeImplementedInAssemblyRetrieverTest
+public class TypesThatNeedToBeImplementedInAssemblyRetrieverTest(ITestOutputHelper testOutputHelper)
 {
     private const string TestAssemblyName = "TestAssembly";
 
@@ -38,12 +38,7 @@ public class TypesThatNeedToBeImplementedInAssemblyRetrieverTest
         typeof(PublicClass.INestedInternalInterface),
     };
 
-    private readonly ITestOutputHelper _testOutputHelper;
-
-    public TypesThatNeedToBeImplementedInAssemblyRetrieverTest(ITestOutputHelper testOutputHelper)
-    {
-        _testOutputHelper = testOutputHelper;
-    }
+    private readonly ITestOutputHelper _testOutputHelper = testOutputHelper;
 
     [Fact]
     public void FindsOnlyTypesThatNeedToBeImplemented()
