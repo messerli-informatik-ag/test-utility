@@ -4,7 +4,7 @@ namespace Messerli.Test.Utility;
 
 public sealed class TestEnvironmentBuilder
 {
-    private readonly ImmutableList<TestFile> _testFiles = [];
+    private readonly ImmutableList<TestFile> _testFiles = ImmutableList.Create<TestFile>();
 
     public TestEnvironmentBuilder()
     {
