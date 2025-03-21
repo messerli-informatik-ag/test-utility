@@ -7,7 +7,7 @@
 		<PackageReference Update="Messerli.TempDirectory" Version="[0.3.1, 0.4)" />
 		<PackageReference Update="Moq" Version="4.13.1" />
 		<PackageReference Update="System.Collections.Immutable" Version="1.7" />
-		<PackageReference Update="xunit.extensibility.core" Version="[2.9.3, 3)" />
+		<PackageReference Update="xunit.extensibility.core" Version="[2.4.2, 3)" />
 	</ItemGroup>
 	<ItemGroup Label="Build dependencies">
 		<PackageReference Update="Messerli.CodeStyle" Version="2.3.1" />
@@ -15,7 +15,7 @@
 	</ItemGroup>
 	<ItemGroup Label="Test dependencies">
 		<PackageReference Update="Microsoft.NET.Test.Sdk" Version="[17.12.0, 18)" />
-		<PackageReference Update="xunit" Version="[2.9.3, 3)" />
-		<PackageReference Update="xunit.runner.visualstudio" Version="[3.0.1, 4)" />
+		<PackageReference Update="xunit" Version="[2.4.2, 3)" />
+		<PackageReference Update="xunit.runner.visualstudio" Version="[2.4.2 , 4)" />
 	</ItemGroup>
 </Project>
