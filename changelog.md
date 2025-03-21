@@ -109,3 +109,6 @@ Rerelease of 0.6.0 with fixed nuget package.
 
 # 0.13.0
 * Downgrade `Moq` to pre Sponsorlink version
+
+# 0.13.1
+* Downgrade `xunit.*` packages
